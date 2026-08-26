@@ -124,14 +124,22 @@ export default function HeroVideo({ onOpenEnquiryModal }: HeroVideoProps) {
             </h1>
 
             {/* Subtitle Paragraph Description */}
-            <p className="font-body text-slate-800 text-sm sm:text-base font-semibold leading-relaxed max-w-lg pt-1 drop-shadow-sm relative z-20">
-              Ultra-luxury 2, 3 & 4 BHK riverside residences at Trisulia, Cuttack
-              starting at{" "}
-              <span className="font-black text-slate-950 bg-[#A4F4F9] px-2 py-0.5 rounded border border-[#7DF9FF] shadow-sm inline-block">
-                {cascadeContent.project.priceStarting}
-              </span>
-              . 60% open green space, sky amenities, and 100% RERA approval.
-            </p>
+            <div className="font-body text-slate-800 text-sm sm:text-base font-semibold leading-relaxed max-w-lg pt-1 drop-shadow-sm relative z-20 space-y-3">
+              <p className="text-slate-800 font-semibold leading-relaxed">
+                Ultra-luxury 2, 3 & 4 BHK riverside residences at Trisulia, Cuttack.
+              </p>
+              
+              {/* Block level price badge on mobile to prevent text wrapping into badge */}
+              <div className="my-2.5 block sm:inline-block">
+                <span className="font-black text-slate-950 bg-[#A4F4F9] px-3.5 py-1.5 rounded-lg border border-[#7DF9FF] shadow-sm text-xs sm:text-sm tracking-wide inline-flex items-center gap-1">
+                  {cascadeContent.project.priceStarting}
+                </span>
+              </div>
+
+              <p className="text-slate-700 text-xs sm:text-sm font-semibold leading-relaxed">
+                60% open green space, sky amenities, and 100% RERA approval.
+              </p>
+            </div>
 
             {/* CTA Buttons */}
             <div className="pt-2 flex flex-wrap items-center gap-4">

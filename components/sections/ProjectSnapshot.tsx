@@ -85,7 +85,7 @@ export default function ProjectSnapshot() {
   return (
     <section
       ref={sectionRef}
-      className="py-24 bg-slate-50 relative overflow-hidden border-b border-slate-200"
+      className="py-12 sm:py-20 lg:py-24 bg-slate-50 relative overflow-hidden border-b border-slate-200"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

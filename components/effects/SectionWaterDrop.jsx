@@ -25,9 +25,9 @@ export default function SectionWaterDrop({ opacity = 0.55, className = '' }) {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
 
-    // Low-res simulation → scaled up via CSS for perf
-    const W = 260;
-    const H = 160;
+    // Smooth simulation resolution — high density for crisp mobile & desktop paint
+    const W = 480;
+    const H = 280;
     canvas.width  = W;
     canvas.height = H;
 
@@ -150,9 +150,7 @@ export default function SectionWaterDrop({ opacity = 0.55, className = '' }) {
       aria-hidden="true"
       className={`pointer-events-none absolute inset-0 w-full h-full z-0 ${className}`}
       style={{
-        imageRendering: 'pixelated',
         opacity,
-        // no blend mode — show raw vivid colors directly
       }}
     />
   );

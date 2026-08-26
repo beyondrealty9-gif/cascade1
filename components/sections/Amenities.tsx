@@ -36,9 +36,9 @@ export default function Amenities() {
         id="amenities"
         initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 60 }}
         whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }}
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-        className="py-24 bg-white relative overflow-hidden border-b border-slate-200"
+        className="py-12 sm:py-20 lg:py-24 bg-white relative overflow-hidden border-b border-slate-200"
       >
         {/* White-theme wave — decorative bottom watermark */}
         <WaveBackground theme="white" height={140} position="bottom" />

@@ -144,8 +144,8 @@ export default function LegacySection() {
         }
         className={
           disablePinCover
-            ? "w-full bg-white relative z-[2] px-4 sm:px-6 lg:px-8 overflow-hidden"
-            : "relative z-[2] bg-white border-t border-slate-200 shadow-2xl py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+            ? "w-full bg-white relative z-[2] px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-24 overflow-hidden"
+            : "relative z-[2] bg-white border-t border-slate-200 shadow-2xl py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
         }
       >
         {/* Real 3D Shallow Water Physics Ripple Engine + Floating Bubbles & Waves */}
@@ -154,20 +154,20 @@ export default function LegacySection() {
         <WaveBackground theme="white" height={160} position="bottom" />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          {/* Top Centered Paragraph with Interactive ScrambledText */}
-          <div className="max-w-4xl mx-auto text-center mb-10">
+          {/* Top Centered Paragraph inside a High-Contrast Card Container */}
+          <div className="max-w-3xl mx-auto text-center mb-12 p-6 sm:p-8 rounded-2xl bg-white/95 border border-slate-200 shadow-md backdrop-blur-md">
             <ScrambledText
               radius={90}
               duration={1.2}
               speed={0.5}
               scrambleChars=".:!@#$%"
-              className="font-body text-slate-700 text-base sm:text-lg leading-relaxed font-normal"
+              className="font-body text-slate-900 text-sm sm:text-base leading-relaxed font-semibold"
             >
               At Motwani Constructions, we believe in growing together through strong and reliable partnerships. Our trusted financial allies and engineering teams bring years of experience, credibility, and dedication, ensuring every homeowner benefits from the best opportunities in real estate. By working hand in hand with our partners, we deliver value, transparency, and success in every landmark project.
             </ScrambledText>
           </div>
 
-          {/* Centered Heading & Subtitle matching screenshot */}
+          {/* Centered Heading & Subtitle */}
           <div className="text-center max-w-2xl mx-auto mb-10">
             <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-2">
               Trusted Real Estate Partners & Heritage

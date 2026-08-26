@@ -49,9 +49,9 @@ export default function LocationAdvantage() {
                 scale: 1,
               }
         }
-        viewport={{ once: false, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-        className="py-24 bg-slate-950 relative overflow-hidden border-b border-slate-800 text-white"
+        className="py-12 sm:py-20 lg:py-24 bg-slate-950 relative overflow-hidden border-b border-slate-800 text-white"
       >
         {/* Full-Bleed Architectural Render Background (No Pure Blur - Clear & Vivid) */}
         <div className="absolute inset-0 w-full h-full">

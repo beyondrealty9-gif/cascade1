@@ -25,7 +25,7 @@ export default function LifestyleExperience() {
   ];
 
   return (
-    <section id="lifestyle" className="relative py-28 overflow-hidden bg-slate-950 text-white border-b border-slate-800 flex items-center min-h-[600px]">
+    <section id="lifestyle" className="relative py-12 sm:py-20 lg:py-24 overflow-hidden bg-slate-950 text-white border-b border-slate-800 flex items-center min-h-[500px]">
       {/* ANIMATION 2: Black Frame -> Expanding Full-Screen Moving Video Reveal */}
       <motion.div
         initial={
@@ -38,7 +38,7 @@ export default function LifestyleExperience() {
             ? { opacity: 1 }
             : { scale: 1, borderRadius: "0px", opacity: 1 }
         }
-        viewport={{ once: false, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }}
         transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
         className="absolute inset-0 w-full h-full overflow-hidden shadow-2xl"
       >

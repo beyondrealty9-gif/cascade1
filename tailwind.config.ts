@@ -23,6 +23,19 @@ const config: Config = {
           600: "#C74E00",
           700: "#B34400",
         },
+        // Unified Cyan Color System Scale
+        cyan: {
+          50:  "#F0FBFC",
+          100: "#DFF6F8",
+          200: "#C7EEF2",
+          300: "#A7E1E8",
+          400: "#7FD0DA",
+          500: "#7DF9FF",
+          600: "#0E7C86",
+          800: "#0B4F58",
+          900: "#072F35",
+        },
+
         // 4 Exact Requested Electric Waterfront Colors
         electric: "#7DF9FF", // Electric Blue #7DF9FF rgb(125,249,255)
         turquoise: "#AFEEEE", // Pale Turquoise #AFEEEE rgb(175,238,238)

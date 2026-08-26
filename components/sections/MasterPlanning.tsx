@@ -31,8 +31,14 @@ export default function MasterPlanning() {
     setActiveIdx((prev) => (prev - 1 + gallery.length) % gallery.length);
   };
 
-  // Scroll active thumbnail into view inside the film strip track
+  const isInitialMount = useRef(true);
+
+  // Scroll active thumbnail into view inside the film strip track (user interactions only)
   useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
     if (reelTrackRef.current) {
       const activeEl = reelTrackRef.current.children[activeIdx] as HTMLElement;
       if (activeEl) {
@@ -54,7 +60,7 @@ export default function MasterPlanning() {
 
   return (
     <div className="w-full overflow-hidden bg-slate-950 text-white">
-      <section id="masterplan" className="py-24 bg-slate-950 relative overflow-hidden border-b border-slate-800">
+      <section id="masterplan" className="py-12 sm:py-20 lg:py-24 bg-slate-950 relative overflow-hidden border-b border-slate-800">
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Title */}

@@ -60,9 +60,9 @@ export default function ConnectivityMap() {
         id="connectivity"
         initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, x: 120 }}
         whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, x: 0 }}
-        viewport={{ once: false, amount: 0.15 }}
+        viewport={{ once: true, amount: 0.05 }}
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-        className="py-24 bg-slate-950 relative overflow-hidden border-b border-slate-800"
+        className="py-12 sm:py-20 lg:py-24 bg-slate-950 relative overflow-hidden border-b border-slate-800"
       >
         {/* 3D water-drop ripple — vivid cyan blue drops on dark bg */}
         <SectionWaterDrop opacity={0.70} />
