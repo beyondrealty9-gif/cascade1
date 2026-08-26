@@ -1,0 +1,344 @@
+{
+  "project": {
+    "name": "Codename Cascade",
+    "developer": "Motwani Constructions Pvt. Ltd.",
+    "tagline": "Live Where the River Flows.",
+    "subtitle": "Premium Riverside Residences at Trisulia, Cuttack by Motwani Constructions Pvt. Ltd.",
+    "location": "Trisulia, Cuttack, Odisha",
+    "priceStarting": "STARTING AT *₹69 LAKHS",
+    "priceSubtext": "(@4900/sqft) | 2, 3 & 4 BHK HOMES",
+    "reraNo": "RP/19/2024/CASCADE",
+    "phone": "+91 8598 099 099",
+    "email": "sales@motwaniconstructions.com",
+    "address": "Trisulia Bridge Junction, Cuttack-Bhubaneswar Expressway, Odisha - 754005"
+  },
+  "hero": {
+    "badge": "Prime Riverside Living in Trisulia",
+    "ctaText": "Enquire Now",
+    "brochureText": "Download Brochure",
+    "videoMobileFallback": "/videos/hero-drone.mp4"
+  },
+  "legacy": {
+    "heading": "OUR LEGACY: Built on 25+ Years of Trust",
+    "subheading": "Motwani Constructions has shaped Odisha's skyline with communities designed for quality, durability, and lasting value one home at a time.",
+    "points": [
+      "Of trusted development",
+      "Strong state wide presence",
+      "Every project, every detail"
+    ],
+    "stats": [
+      {
+        "value": "28+",
+        "numeric": 28,
+        "suffix": "+ Years",
+        "label": "Odisha's Choice",
+        "desc": "Delivering landmark residential and commercial developments across Odisha."
+      },
+      {
+        "value": "15+",
+        "numeric": 15,
+        "suffix": "+",
+        "label": "Iconic Projects",
+        "desc": "Master-planned communities built with international standards."
+      },
+      {
+        "value": "5,000+",
+        "numeric": 5000,
+        "suffix": "+",
+        "label": "Customer-First",
+        "desc": "Creating living environments where generations thrive together."
+      }
+    ]
+  },
+  "location": {
+    "heading": "LOCATION ADVANTAGE: The New Growth Corridor of Bhubaneswar–Cuttack",
+    "subheading": "Seamless connectivity to both cities and key employment hubs. Trisulia is rapidly becoming the 2nd Patia — the strategic midpoint between Bhubaneswar and Cuttack, with infrastructure investment and demand surging.",
+    "points": [
+      "Highway expansion, metro corridors, and civic upgrades underway",
+      "Early movers in emerging corridors consistently outperform mature markets"
+    ],
+    "cards": [
+      {
+        "title": "Strategic Midpoint",
+        "tag": "Strategic Hub",
+        "desc": "Equidistant from Bhubaneswar's IT Corridor (Patia/Infocity) and Cuttack's commercial core."
+      },
+      {
+        "title": "Rapid Infrastructure Growth",
+        "tag": "Capital Appreciation",
+        "desc": "Direct access to upcoming metro lines, 6-lane expressways, and premium educational institutes."
+      },
+      {
+        "title": "Strong Appreciation Potential",
+        "tag": "High Returns",
+        "desc": "Perpetual cool river breeze from the Mahanadi with zero city industrial pollution."
+      }
+    ]
+  },
+  "mahanadi": {
+    "heading": "THE MAHANADI ADVANTAGE: Every Great City Grows Around Water",
+    "subheading": "River-facing homes are among the most coveted and the most limited assets in any city. Codename Cascade offers what most never can: direct Mahanadi views from your private balcony.",
+    "points": [
+      "Uninterrupted river vistas from every tower",
+      "Natural cross-ventilation from the river corridor",
+      "River-facing supply is finite — own before it's gone"
+    ],
+    "cards": [
+      { "title": "Better Views", "desc": "Uninterrupted panoramic vistas of the Mahanadi from your private balcony." },
+      { "title": "Better Airflow", "desc": "Natural river breezes providing 2-3°C cooler airflow year-round." },
+      { "title": "Limited Inventory", "desc": "Finite riverfront land supply — own an irreplaceable asset before it's gone." }
+    ]
+  },
+  "snapshot": {
+    "heading": "PROJECT SNAPSHOT: Codename Cascade at a Glance",
+    "subheading": "Designed for the Discerning Buyer. Every detail of Codename Cascade is engineered around one idea: flow. River-inspired planning, open layouts, and community-centric spaces create a living experience unlike any other in Trisulia.",
+    "specifications": [
+      "B+G+12 storied residential towers",
+      "Spacious 2, 3 & 4 BHK configurations",
+      "60% open space — more life per sq ft",
+      "Riverside balcony views from select units",
+      "Starting at just ₹69 Lakhs",
+      "212 Units",
+      "Inspired by Kataka culture"
+    ],
+    "items": [
+      {
+        "label": "Residences",
+        "value": "2, 3 & 4 BHK",
+        "detail": "Spacious layouts with wide balcony decks"
+      },
+      {
+        "label": "Open Spaces",
+        "value": "60% Greenery",
+        "detail": "60% open space — more life per sq ft"
+      },
+      {
+        "label": "Starting Price",
+        "value": "₹69 Lakhs*",
+        "detail": "Special pre-launch pricing benefit"
+      },
+      {
+        "label": "Towers & Layout",
+        "value": "B+G+12 Towers",
+        "detail": "Inspired by Kataka culture (212 Units)"
+      }
+    ]
+  },
+  "connectivity": {
+    "heading": "CONNECTIVITY: Minutes Away from Everything That Matters",
+    "subheading": "Trisulia's strategic location places residents within easy reach of Bhubaneswar's employment hubs, Cuttack's commercial core, and major transit points — making Codename Cascade ideal for both end-users and investors.",
+    "destinations": [
+      {
+        "name": "S.C.B. Medical",
+        "time": "Approx. 5 minutes",
+        "distance": "3.2 km",
+        "type": "Healthcare"
+      },
+      {
+        "name": "Barabati Stadium",
+        "time": "Approx. 10 minutes",
+        "distance": "6.5 km",
+        "type": "Sports & Leisure"
+      },
+      {
+        "name": "Infocity IT Hub",
+        "time": "Approx. 15 minutes",
+        "distance": "9.8 km",
+        "type": "Tech Hub"
+      },
+      {
+        "name": "KIIT University",
+        "time": "Approx. 18 minutes",
+        "distance": "11.2 km",
+        "type": "Education"
+      },
+      {
+        "name": "Patia (2nd Patia)",
+        "time": "Approx. 20 minutes",
+        "distance": "12.5 km",
+        "type": "Shopping & Hub"
+      },
+      {
+        "name": "Bhubaneswar City Center",
+        "time": "Approx. 25 minutes",
+        "distance": "16.0 km",
+        "type": "Metropolitan Core"
+      }
+    ]
+  },
+  "masterplan": {
+    "heading": "MASTER PLANNING: Designed Around Flow",
+    "subheading": "The masterplan mirrors the Mahanadi: fluid, open, and alive. Every zone is purposefully placed to maximize light, air, and community.",
+    "points": [
+      "Expansive landscaped areas with dedicated promenades",
+      "Thoughtfully designed zones for connection and recreation",
+      "Open layouts engineered for cross-ventilation and daylight",
+      "Towers positioned to capture uninterrupted Mahanadi views"
+    ],
+    "callouts": [
+      "Community Spaces",
+      "River-Facing Orientation",
+      "Natural Light & Ventilation",
+      "Green Zones & Walking Tracks"
+    ],
+    "gallery": [
+      {
+        "title": "Terrace Twilight Lawn",
+        "category": "Outdoor Deck",
+        "image": "/images/terrace-lawn.jpg",
+        "desc": "Twilight party lawn with ambient lighting overlooking the river."
+      },
+      {
+        "title": "Open Air Amphitheatre (OAT)",
+        "category": "Community Deck",
+        "image": "/images/terrace-oat.jpg",
+        "desc": "Elevated seating deck for sunset performances and social gatherings."
+      },
+      {
+        "title": "Rooftop Badminton Court",
+        "category": "Sports",
+        "image": "/images/terrace-badminton.jpg",
+        "desc": "Professional twilight badminton court with panoramic city views."
+      },
+      {
+        "title": "Rooftop Chess Plaza",
+        "category": "Leisure",
+        "image": "/images/terrace-chess.jpg",
+        "desc": "Giant life-sized chess court on the executive terrace."
+      },
+      {
+        "title": "Terrace Party Deck",
+        "category": "Recreation",
+        "image": "/images/terrace-party-lawn.jpg",
+        "desc": "Exclusive celebration zone for resident private functions."
+      },
+      {
+        "title": "Infinity Swimming Pool",
+        "category": "Wellness",
+        "image": "/images/swimming-pool.jpg",
+        "desc": "Twilight swimming pool with calm waters & sun loungers."
+      },
+      {
+        "title": "State-of-the-Art Gym",
+        "category": "Fitness",
+        "image": "/images/gym.jpg",
+        "desc": "Fully equipped modern fitness center with cardio & strength stations."
+      },
+      {
+        "title": "Indoor Games Arcade",
+        "category": "Family",
+        "image": "/images/indoor-games.jpg",
+        "desc": "Table tennis, billiards, and board games lounge."
+      },
+      {
+        "title": "Executive Library Lounge",
+        "category": "Quiet Zone",
+        "image": "/images/library.jpg",
+        "desc": "Serene reading room & co-working sanctuary."
+      },
+      {
+        "title": "Grand Community Hall",
+        "category": "Events",
+        "image": "/images/community-hall.jpg",
+        "desc": "Double-height banquet hall for grand family celebrations."
+      },
+      {
+        "title": "Riverside Tower Elevation",
+        "category": "Architecture",
+        "image": "/images/side-elevation-twilight.jpg",
+        "desc": "Iconic high-rise twilight architectural silhouette on the Mahanadi."
+      },
+      {
+        "title": "Grand Entrance Plaza",
+        "category": "Landmark",
+        "image": "/images/road-elevation-dusk.jpg",
+        "desc": "Gated grand entryway with water cascade features & 24/7 security."
+      },
+      {
+        "title": "Fresh Air Outdoor Gym Deck",
+        "category": "Health",
+        "image": "/images/terrace-outer-gym.jpg",
+        "desc": "Elevated outdoor calisthenics deck amidst natural river breezes."
+      }
+    ]
+  },
+  "amenities": {
+    "heading": "LIFESTYLE & AMENITIES: A Life Less Ordinary",
+    "subheading": "Over 25+ curated lifestyle experiences designed to elevate health, community, and everyday luxury.",
+    "categories": [
+      {
+        "id": "wellness",
+        "title": "Wellness & Fitness",
+        "items": [
+          { "name": "Sky Fitness Gym", "image": "/images/gym.webp", "desc": "State-of-the-art gym, yoga decks, and swimming pool" },
+          { "name": "Infinity Pool", "image": "/images/swimming-pool.webp", "desc": "Temperature-controlled pool with river view" },
+          { "name": "Yoga & Meditation Deck", "image": "/images/terrace-lawn.webp", "desc": "Sunrise yoga deck amidst breeze" },
+          { "name": "Outdoor Fitness Station", "image": "/images/terrace-outer-gym.webp", "desc": "Fresh-air calisthenics & workout gear" }
+        ]
+      },
+      {
+        "id": "family",
+        "title": "Family & Recreation",
+        "items": [
+          { "name": "Indoor Games Arcade", "image": "/images/indoor-games.webp", "desc": "Kids' play zones, indoor games, and family lounge areas" },
+          { "name": "Kids Play Area", "image": "/images/kids-play-area.webp", "desc": "Safe rubberized flooring & fun slides" },
+          { "name": "Library Lounge", "image": "/images/library.webp", "desc": "Quiet co-working & reading rooms" },
+          { "name": "Community Banquet Hall", "image": "/images/community-hall.webp", "desc": "Air-conditioned celebration space" }
+        ]
+      },
+      {
+        "id": "outdoor",
+        "title": "Outdoor Experiences",
+        "items": [
+          { "name": "Riverside Promenade", "image": "/images/terrace-oat.webp", "desc": "Riverside promenade, sunset viewing decks, and landscaped gardens" },
+          { "name": "Rooftop Badminton Court", "image": "/images/terrace-badminton.webp", "desc": "Floodlit court under the stars" },
+          { "name": "Outdoor Chess Plaza", "image": "/images/terrace-chess.webp", "desc": "Interactive tactical gaming area" },
+          { "name": "Terrace Party Lawn", "image": "/images/terrace-party-lawn.webp", "desc": "Lush grass deck for private dinners" }
+        ]
+      },
+      {
+        "id": "community",
+        "title": "Community & Clubhouse",
+        "items": [
+          { "name": "Exclusive Clubhouse", "image": "/images/road-elevation-dusk.webp", "desc": "Exclusive clubhouse for residents — events, gatherings, and more" },
+          { "name": "Side Elevation Pavilion", "image": "/images/side-elevation-twilight.webp", "desc": "Architectural water features & lighting" },
+          { "name": "Senior Citizens Deck", "image": "/images/terrace-lawn.webp", "desc": "Shaded seating with herbal garden" },
+          { "name": "Sky Lounge & Cafe", "image": "/images/terrace-oat.webp", "desc": "Cozy sunset coffee corner" }
+        ]
+      }
+    ]
+  },
+  "lifestyle": {
+    "heading": "RIVERSIDE LIVING EXPERIENCE: Mornings Begin with the River",
+    "subheading": "Live surrounded by greenery, water, and open sky.",
+    "features": [
+      "Serene Sunrise Views Over Mahanadi",
+      "Continuous Natural Breeze & Oxygen-Rich Environment",
+      "Private Balconies Designed for Outdoor Dining",
+      "Tranquil Sanctuary Away from Urban Heat"
+    ],
+    "points": [
+      "🌅 Wake up to the Mahanadi flowing past your window",
+      "🚶 Riverside paths for morning walks and evening strolls",
+      "🌬 River-cooled air flowing naturally through your home",
+      "🌿 Live surrounded by greenery, water, and open sky",
+      "🌇 Golden evenings over the water from your private terrace"
+    ],
+    "cards": [
+      "Balcony Views",
+      "Walking Promenade",
+      "Morning Breeze",
+      "Nature Connection",
+      "Sunset Views"
+    ]
+  },
+  "contact": {
+    "heading": "Claim Your Riverside Residence",
+    "subheading": "Schedule a private VIP site visit or request complete floor plans and pricing structure.",
+    "formTitle": "Express Your Interest"
+  },
+  "legalNotes": {
+    "brokerageHeader": "3% Brokerage on Every Booking",
+    "disclaimer": "Note:\na. Agreement to Sale can be executed after the receipt of 10% of the total consideration amount\nb. Minimum booking amount is Rs 5 lacs.\nc. In case of cancellation of property after the payment of the pay-out paid against such sale will either be adjusted in further brokerage to be paid to you for other sales made by you or will be returned to us without any deductions."
+  }
+}

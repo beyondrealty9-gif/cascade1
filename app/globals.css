@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+  
+  body {
+    @apply bg-background text-textDark font-body antialiased overflow-x-hidden selection:bg-brandRed-500/20 selection:text-brandRed-600;
+  }
+}
+
+/* Lenis Smooth Scroll Rules */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #007BA7;
+}
+
+/* Ambient Animations for Hero Section */
+@keyframes kenburns {
+  0% { transform: scale(1) translate(0%, 0%); }
+  50% { transform: scale(1.03) translate(-0.4%, -0.4%); }
+  100% { transform: scale(1) translate(0%, 0%); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 4px 14px rgba(224, 88, 0, 0.3); }
+  50% { box-shadow: 0 8px 24px rgba(224, 88, 0, 0.6); }
+}
+
+.animate-kenburns {
+  animation: kenburns 24s ease-in-out infinite alternate;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlowBorder {
+  0%, 100% { border-color: rgba(0, 123, 167, 1); box-shadow: 0 4px 14px rgba(0, 123, 167, 0.25); }
+  50% { border-color: rgba(0, 123, 167, 0.6); box-shadow: 0 8px 24px rgba(0, 123, 167, 0.45); }
+}
+
+.animate-pulse-glow-border {
+  animation: pulseGlowBorder 2.5s ease-in-out infinite;
+}
