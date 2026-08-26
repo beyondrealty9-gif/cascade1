@@ -18,10 +18,10 @@ export default function LifestyleExperience() {
   }, []);
 
   const featureIcons = [
-    <Sun className="w-5 h-5 text-[#E05800]" key="0" />,
-    <Wind className="w-5 h-5 text-river-600" key="1" />,
-    <Eye className="w-5 h-5 text-[#E05800]" key="2" />,
-    <Compass className="w-5 h-5 text-river-600" key="3" />,
+    <Sun className="w-5 h-5 text-[#7DF9FF]" key="0" />,
+    <Wind className="w-5 h-5 text-[#7DF9FF]" key="1" />,
+    <Eye className="w-5 h-5 text-[#7DF9FF]" key="2" />,
+    <Compass className="w-5 h-5 text-[#7DF9FF]" key="3" />,
   ];
 
   return (
@@ -59,7 +59,7 @@ export default function LifestyleExperience() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
         <div className="max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-white text-slate-900 text-xs uppercase tracking-widest font-extrabold mb-6 shadow-lg backdrop-blur-md">
-            <Heart className="w-3.5 h-3.5 text-[#E05800]" />
+            <Heart className="w-3.5 h-3.5 text-[#7DF9FF]" />
             <span>UNRIVALED LIVING CONCEPT</span>
           </div>
 

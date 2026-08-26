@@ -1,11 +1,20 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Award, Building2, Users } from "lucide-react";
 import ScrambledText from "@/components/ui/ScrambledText";
+import WaterBubbles from "@/components/effects/WaterBubbles";
+import WaveBackground from "@/components/effects/WaveBackground";
 import cascadeContent from "@/content/cascade.json";
+
+// Real 3D Water Drop Ripple Engine — canvas height field physics, SSR disabled
+const SectionWaterDrop = dynamic(
+  () => import("@/components/effects/SectionWaterDrop"),
+  { ssr: false }
+);
 
 function AnimatedCounter({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -135,11 +144,16 @@ export default function LegacySection() {
         }
         className={
           disablePinCover
-            ? "w-full bg-white relative z-[2] px-4 sm:px-6 lg:px-8"
-            : "relative z-[2] bg-white border-t border-slate-200 shadow-2xl py-16 sm:py-24 px-4 sm:px-6 lg:px-8"
+            ? "w-full bg-white relative z-[2] px-4 sm:px-6 lg:px-8 overflow-hidden"
+            : "relative z-[2] bg-white border-t border-slate-200 shadow-2xl py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
         }
       >
-        <div className="max-w-7xl mx-auto">
+        {/* Real 3D Shallow Water Physics Ripple Engine + Floating Bubbles & Waves */}
+        <SectionWaterDrop opacity={0.45} />
+        <WaterBubbles count={28} color="125,249,255" className="absolute inset-0 z-0 opacity-75" />
+        <WaveBackground theme="white" height={160} position="bottom" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
           {/* Top Centered Paragraph with Interactive ScrambledText */}
           <div className="max-w-4xl mx-auto text-center mb-10">
             <ScrambledText
@@ -170,7 +184,7 @@ export default function LegacySection() {
                 key={idx}
                 className="p-6 flex flex-col items-center justify-center text-center hover:bg-white transition-colors group cursor-default"
               >
-                <span className="font-display font-black text-slate-700 text-lg tracking-widest uppercase group-hover:text-[#E05800] transition-colors">
+                <span className="font-display font-black text-slate-700 text-lg tracking-widest uppercase group-hover:text-[#007BA7] transition-colors">
                   {partner.name}
                 </span>
                 <span className="text-[10px] font-semibold text-slate-400 mt-1 uppercase tracking-wider">
@@ -185,15 +199,15 @@ export default function LegacySection() {
             {cascadeContent.legacy.stats.map((stat, idx) => (
               <div
                 key={idx}
-                className="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#E05800]/40 transition-all duration-300 shadow-sm hover:shadow-xl group hover:-translate-y-1"
+                className="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#7DF9FF]/60 transition-all duration-300 shadow-sm hover:shadow-xl group hover:-translate-y-1"
               >
-                <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-6 shadow-sm group-hover:bg-[#E05800] transition-colors">
-                  {idx === 0 && <Award className="w-6 h-6 text-[#E05800] group-hover:text-white transition-colors" />}
-                  {idx === 1 && <Building2 className="w-6 h-6 text-[#E05800] group-hover:text-white transition-colors" />}
-                  {idx === 2 && <Users className="w-6 h-6 text-[#E05800] group-hover:text-white transition-colors" />}
+                <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-6 shadow-sm group-hover:bg-[#7DF9FF] transition-colors">
+                  {idx === 0 && <Award className="w-6 h-6 text-[#007BA7] group-hover:text-slate-950 transition-colors" />}
+                  {idx === 1 && <Building2 className="w-6 h-6 text-[#007BA7] group-hover:text-slate-950 transition-colors" />}
+                  {idx === 2 && <Users className="w-6 h-6 text-[#007BA7] group-hover:text-slate-950 transition-colors" />}
                 </div>
 
-                <div className="font-display text-4xl sm:text-5xl font-black text-slate-900 tracking-tight mb-2 group-hover:text-[#E05800] transition-colors">
+                <div className="font-display text-4xl sm:text-5xl font-black text-slate-900 tracking-tight mb-2 group-hover:text-[#007BA7] transition-colors">
                   <AnimatedCounter end={stat.numeric} suffix={stat.suffix} />
                 </div>
                 <div className="font-display text-lg font-extrabold text-slate-800 mb-2">{stat.label}</div>

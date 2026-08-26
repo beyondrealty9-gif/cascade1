@@ -28,8 +28,8 @@ export default function Footer() {
               {cascadeContent.project.subtitle}. Designed for discerning families seeking an elevated lifestyle on the banks of the Mahanadi River.
             </p>
 
-            <div className="flex items-center gap-2 text-xs text-[#E05800] font-bold">
-              <ShieldCheck className="w-4 h-4 shrink-0" />
+            <div className="flex items-center gap-2 text-xs text-[#7DF9FF] font-bold">
+              <ShieldCheck className="w-4 h-4 shrink-0 text-[#7DF9FF]" />
               <span>Odisha RERA Registered Project: {cascadeContent.project.reraNo}</span>
             </div>
           </div>
@@ -38,13 +38,13 @@ export default function Footer() {
           <div className="md:col-span-3 space-y-3">
             <h4 className="font-display font-extrabold text-white text-base">Quick Links</h4>
             <ul className="space-y-2 text-xs">
-              <li><a href="#hero" className="hover:text-[#E05800] transition-colors">Overview</a></li>
-              <li><a href="#legacy" className="hover:text-[#E05800] transition-colors">Motwani Heritage</a></li>
-              <li><a href="#location" className="hover:text-[#E05800] transition-colors">Location Advantage</a></li>
-              <li><a href="#connectivity" className="hover:text-[#E05800] transition-colors">Connectivity Radar</a></li>
-              <li><a href="#masterplan" className="hover:text-[#E05800] transition-colors">Master Plan Renders</a></li>
-              <li><a href="#amenities" className="hover:text-[#E05800] transition-colors">25+ Amenities</a></li>
-              <li><a href="#contact" className="hover:text-[#E05800] transition-colors">Enquiry & VIP Visit</a></li>
+              <li><a href="#hero" className="hover:text-[#7DF9FF] transition-colors">Overview</a></li>
+              <li><a href="#legacy" className="hover:text-[#7DF9FF] transition-colors">Motwani Heritage</a></li>
+              <li><a href="#location" className="hover:text-[#7DF9FF] transition-colors">Location Advantage</a></li>
+              <li><a href="#connectivity" className="hover:text-[#7DF9FF] transition-colors">Connectivity Radar</a></li>
+              <li><a href="#masterplan" className="hover:text-[#7DF9FF] transition-colors">Master Plan Renders</a></li>
+              <li><a href="#amenities" className="hover:text-[#7DF9FF] transition-colors">25+ Amenities</a></li>
+              <li><a href="#contact" className="hover:text-[#7DF9FF] transition-colors">Enquiry & VIP Visit</a></li>
             </ul>
           </div>
 
@@ -53,23 +53,23 @@ export default function Footer() {
             <h4 className="font-display font-extrabold text-white text-base">Sales & Marketing Office</h4>
             <div className="space-y-2 text-xs text-slate-300">
               <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-[#E05800] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#7DF9FF] shrink-0 mt-0.5" />
                 <span>{cascadeContent.project.address}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#E05800] shrink-0" />
-                <a href={`tel:${cascadeContent.project.phone}`} className="hover:text-[#E05800]">{cascadeContent.project.phone}</a>
+                <Phone className="w-4 h-4 text-[#7DF9FF] shrink-0" />
+                <a href={`tel:${cascadeContent.project.phone}`} className="hover:text-[#7DF9FF]">{cascadeContent.project.phone}</a>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[#E05800] shrink-0" />
-                <a href={`mailto:${cascadeContent.project.email}`} className="hover:text-[#E05800]">{cascadeContent.project.email}</a>
+                <Mail className="w-4 h-4 text-[#7DF9FF] shrink-0" />
+                <a href={`mailto:${cascadeContent.project.email}`} className="hover:text-[#7DF9FF]">{cascadeContent.project.email}</a>
               </div>
             </div>
 
             {/* 3% Brokerage & Booking Note Callout Box */}
             <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-xs leading-relaxed space-y-2">
-              <div className="flex items-center gap-2 text-[#E05800] font-extrabold uppercase tracking-wider text-xs">
-                <Award className="w-4 h-4 shrink-0" />
+              <div className="flex items-center gap-2 text-[#7DF9FF] font-extrabold uppercase tracking-wider text-xs">
+                <Award className="w-4 h-4 shrink-0 text-[#7DF9FF]" />
                 <span>{cascadeContent.legalNotes.brokerageHeader}</span>
               </div>
               <p className="text-slate-300 font-medium whitespace-pre-line text-[11px] leading-normal">

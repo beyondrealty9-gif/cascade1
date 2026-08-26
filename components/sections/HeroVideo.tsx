@@ -1,11 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import FoldText from "@/components/ui/FoldText";
+import WaterBubbles from "@/components/effects/WaterBubbles";
 import cascadeContent from "@/content/cascade.json";
+
+// Hero-only 3D water — lazy loaded, SSR disabled
+const RealisticWater3D = dynamic(
+  () => import("@/components/effects/RealisticWater3D"),
+  { ssr: false }
+);
 
 interface HeroVideoProps {
   onOpenEnquiryModal: () => void;
@@ -13,6 +21,7 @@ interface HeroVideoProps {
 
 export default function HeroVideo({ onOpenEnquiryModal }: HeroVideoProps) {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [isMobile, setIsMobile] = useState(true); // default true = safe until measured
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -20,6 +29,12 @@ export default function HeroVideo({ onOpenEnquiryModal }: HeroVideoProps) {
       setPrefersReducedMotion(
         window.matchMedia("(prefers-reduced-motion: reduce)").matches
       );
+      // Skip expensive WebGL on mobile — real-estate traffic is 70%+ mobile
+      const mq = window.matchMedia("(max-width: 768px)");
+      setIsMobile(mq.matches);
+      const onChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+      mq.addEventListener("change", onChange);
+      return () => mq.removeEventListener("change", onChange);
     }
   }, []);
 
@@ -34,7 +49,7 @@ export default function HeroVideo({ onOpenEnquiryModal }: HeroVideoProps) {
   };
 
   return (
-    <div className="w-full h-screen overflow-hidden bg-slate-100 relative">
+    <div className="w-full min-h-[100dvh] overflow-hidden bg-slate-100 relative">
       {/* Entire Hero Section Motion Block */}
       <motion.section
         id="hero"
@@ -46,7 +61,7 @@ export default function HeroVideo({ onOpenEnquiryModal }: HeroVideoProps) {
           delay: 0.15,
           ease: [0.22, 1, 0.36, 1],
         }}
-        className="relative w-full h-screen overflow-hidden flex items-center justify-start bg-slate-100"
+        className="relative w-full min-h-[100dvh] overflow-hidden flex items-center justify-start bg-slate-100 py-12 sm:py-0"
       >
         {/* Background Drone Video */}
         <div className="absolute inset-0 w-full h-full">
@@ -60,13 +75,25 @@ export default function HeroVideo({ onOpenEnquiryModal }: HeroVideoProps) {
           >
             <source src="/videos/drone-hero-valley.mp4" type="video/mp4" />
           </video>
-          {/* Light gradient scrim on the left for text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 sm:via-white/75 to-transparent lg:w-3/5" />
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent lg:hidden" />
+          {/* Light gradient scrim for text contrast — desktop view 100% unchanged */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent lg:w-3/5 lg:from-white lg:via-white/85" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-transparent lg:hidden" />
         </div>
 
+        {/* 3D Water band — bottom third, available on both mobile and desktop */}
+        {!prefersReducedMotion && (
+          <>
+            <div className="absolute bottom-0 left-0 right-0 h-[38%] opacity-80 pointer-events-none z-[1]">
+              <RealisticWater3D />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 h-[38%] pointer-events-none z-[2]">
+              <WaterBubbles count={28} color="125,249,255" className="absolute inset-0" />
+            </div>
+          </>
+        )}
+
         {/* Hero Content Container */}
-        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-3 sm:px-4 lg:px-6 pt-16 pointer-events-auto">
+        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-20 lg:pt-16 pointer-events-auto">
           <div className="max-w-xl lg:max-w-2xl space-y-6">
             
             {/* Top Eyebrow / Kicker text */}
@@ -100,7 +127,7 @@ export default function HeroVideo({ onOpenEnquiryModal }: HeroVideoProps) {
             <p className="font-body text-slate-800 text-sm sm:text-base font-semibold leading-relaxed max-w-lg pt-1 drop-shadow-sm relative z-20">
               Ultra-luxury 2, 3 & 4 BHK riverside residences at Trisulia, Cuttack
               starting at{" "}
-              <span className="font-black text-[#E05800] bg-orange-100/80 px-2 py-0.5 rounded border border-orange-200 shadow-sm inline-block">
+              <span className="font-black text-slate-950 bg-[#A4F4F9] px-2 py-0.5 rounded border border-[#7DF9FF] shadow-sm inline-block">
                 {cascadeContent.project.priceStarting}
               </span>
               . 60% open green space, sky amenities, and 100% RERA approval.
@@ -111,7 +138,7 @@ export default function HeroVideo({ onOpenEnquiryModal }: HeroVideoProps) {
               {/* Primary DISCOVER Button */}
               <button
                 onClick={onOpenEnquiryModal}
-                className="px-8 py-3.5 rounded-md bg-[#E05800] hover:bg-[#C74E00] text-white font-extrabold tracking-wider uppercase text-xs shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+                className="px-8 py-3.5 rounded-md bg-[#7DF9FF] hover:bg-[#AFEEEE] text-slate-950 font-black tracking-wider uppercase text-xs shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0"
               >
                 DISCOVER
               </button>

@@ -59,8 +59,8 @@ export default function MasterPlanning() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Title */}
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-[#E05800] text-xs uppercase tracking-widest font-extrabold mb-4 shadow-sm backdrop-blur-md">
-              <Film className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-[#7DF9FF] text-xs uppercase tracking-widest font-extrabold mb-4 shadow-sm backdrop-blur-md">
+              <Film className="w-3.5 h-3.5 text-[#7DF9FF]" />
               <span>Cinematic Architectural Gallery (13 Renders)</span>
             </div>
             <h2 className="font-display text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
@@ -82,7 +82,7 @@ export default function MasterPlanning() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="flex items-center gap-3 p-4 rounded-xl bg-slate-900/80 border border-slate-800 shadow-sm"
               >
-                <CheckCircle className="w-5 h-5 text-[#E05800] shrink-0" />
+                <CheckCircle className="w-5 h-5 text-[#7DF9FF] shrink-0" />
                 <span className="text-xs font-bold text-slate-200">{callout}</span>
               </motion.div>
             ))}
@@ -95,7 +95,7 @@ export default function MasterPlanning() {
               initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="relative w-full h-[380px] sm:h-[500px] rounded-3xl overflow-hidden border-2 border-[#E05800]/60 shadow-2xl shadow-[#E05800]/20 bg-slate-900 group cursor-pointer"
+              className="relative w-full h-[380px] sm:h-[500px] rounded-3xl overflow-hidden border-2 border-[#7DF9FF]/60 shadow-2xl shadow-[#7DF9FF]/20 bg-slate-900 group cursor-pointer"
               onClick={() => setSelectedImage(activeItem.image)}
             >
               <Image
@@ -110,18 +110,18 @@ export default function MasterPlanning() {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent opacity-90" />
 
               {/* Active Badge */}
-              <div className="absolute top-6 left-6 font-display font-black text-xs text-white bg-[#E05800] border border-white/20 px-3.5 py-1.5 rounded-full shadow-xl backdrop-blur-md">
+              <div className="absolute top-6 left-6 font-display font-black text-xs text-slate-950 bg-[#7DF9FF] border border-white/20 px-3.5 py-1.5 rounded-full shadow-xl backdrop-blur-md">
                 🎬 VIEW {String(activeIdx + 1).padStart(2, "0")} / 13
               </div>
 
               {/* Maximize Icon */}
-              <div className="absolute top-6 right-6 p-3 rounded-full bg-slate-950/80 text-white border border-slate-700 hover:bg-[#E05800] transition-colors shadow-lg">
+              <div className="absolute top-6 right-6 p-3 rounded-full bg-slate-950/80 text-white border border-slate-700 hover:bg-[#7DF9FF] hover:text-slate-950 transition-colors shadow-lg">
                 <Maximize2 className="w-5 h-5" />
               </div>
 
               {/* Active Item Description Overlay */}
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 text-white max-w-3xl">
-                <span className="text-xs uppercase font-black tracking-widest text-white bg-[#E05800] px-3 py-1 rounded-md mb-3 inline-block shadow-md">
+                <span className="text-xs uppercase font-black tracking-widest text-slate-950 bg-[#7DF9FF] px-3 py-1 rounded-md mb-3 inline-block shadow-md">
                   {activeItem.category}
                 </span>
                 <h3 className="font-display font-black text-2xl sm:text-4xl text-white mb-2 tracking-tight">
@@ -139,7 +139,7 @@ export default function MasterPlanning() {
                     e.stopPropagation();
                     handlePrev();
                   }}
-                  className="pointer-events-auto p-3.5 rounded-full bg-slate-950/80 border border-slate-700 hover:bg-[#E05800] text-white shadow-xl hover:scale-110 active:scale-95 transition-all"
+                  className="pointer-events-auto p-3.5 rounded-full bg-slate-950/80 border border-slate-700 hover:bg-[#7DF9FF] hover:text-slate-950 text-white shadow-xl hover:scale-110 active:scale-95 transition-all"
                   title="Previous Render"
                 >
                   <ChevronLeft className="w-6 h-6" />
@@ -150,7 +150,7 @@ export default function MasterPlanning() {
                     e.stopPropagation();
                     handleNext();
                   }}
-                  className="pointer-events-auto p-3.5 rounded-full bg-slate-950/80 border border-slate-700 hover:bg-[#E05800] text-white shadow-xl hover:scale-110 active:scale-95 transition-all"
+                  className="pointer-events-auto p-3.5 rounded-full bg-slate-950/80 border border-slate-700 hover:bg-[#7DF9FF] hover:text-slate-950 text-white shadow-xl hover:scale-110 active:scale-95 transition-all"
                   title="Next Render"
                 >
                   <ChevronRight className="w-6 h-6" />
@@ -165,7 +165,7 @@ export default function MasterPlanning() {
               <span className="text-xs uppercase tracking-widest font-extrabold text-slate-400">
                 Film Strip Track (Click thumbnail to view)
               </span>
-              <span className="text-xs font-bold text-[#E05800]">
+              <span className="text-xs font-bold text-[#7DF9FF]">
                 {activeIdx + 1} of 13 Selected
               </span>
             </div>
@@ -183,7 +183,7 @@ export default function MasterPlanning() {
                     onClick={() => setActiveIdx(idx)}
                     className={`relative shrink-0 rounded-xl overflow-hidden transition-all duration-300 text-left border ${
                       isActive
-                        ? "w-40 sm:w-48 h-28 border-2 border-[#E05800] shadow-lg shadow-[#E05800]/30 scale-105 z-10"
+                        ? "w-40 sm:w-48 h-28 border-2 border-[#7DF9FF] shadow-lg shadow-[#7DF9FF]/30 scale-105 z-10"
                         : "w-32 sm:w-36 h-24 border-slate-800 opacity-60 hover:opacity-100 hover:scale-102"
                     }`}
                   >

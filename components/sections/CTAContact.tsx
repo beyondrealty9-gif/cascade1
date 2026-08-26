@@ -99,7 +99,7 @@ export default function CTAContact() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-800 text-xs uppercase tracking-widest font-extrabold shadow-sm"
             >
-              <Sparkles className="w-3.5 h-3.5 text-[#E05800] animate-spin-slow" />
+              <Sparkles className="w-3.5 h-3.5 text-[#7DF9FF] animate-spin-slow" />
               <span>VIP Pre-Launch Enquiries</span>
             </motion.div>
 
@@ -135,12 +135,12 @@ export default function CTAContact() {
                 whileHover={prefersReducedMotion ? {} : { x: 6 }}
                 className="flex items-start gap-4 p-3 rounded-2xl hover:bg-white hover:shadow-md transition-all cursor-pointer group"
               >
-                <div className="w-11 h-11 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-[#E05800] shrink-0 group-hover:bg-[#E05800] group-hover:text-white transition-colors">
-                  <Phone className="w-5 h-5" />
+                <div className="w-11 h-11 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-950 shrink-0 group-hover:bg-[#7DF9FF] group-hover:text-slate-950 transition-colors">
+                  <Phone className="w-5 h-5 text-[#7DF9FF] group-hover:text-slate-950" />
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-wider font-extrabold text-slate-400">Sales Desk</div>
-                  <a href={`tel:${cascadeContent.project.phone}`} className="font-display text-lg font-black text-slate-900 group-hover:text-[#E05800] transition-colors">
+                  <a href={`tel:${cascadeContent.project.phone}`} className="font-display text-lg font-black text-slate-900 group-hover:text-[#007BA7] transition-colors">
                     {cascadeContent.project.phone}
                   </a>
                 </div>
@@ -173,8 +173,8 @@ export default function CTAContact() {
                 whileHover={prefersReducedMotion ? {} : { x: 6 }}
                 className="flex items-start gap-4 p-3 rounded-2xl hover:bg-white hover:shadow-md transition-all cursor-pointer group"
               >
-                <div className="w-11 h-11 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-[#E05800] shrink-0 group-hover:bg-[#E05800] group-hover:text-white transition-colors">
-                  <MapPin className="w-5 h-5" />
+                <div className="w-11 h-11 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-950 shrink-0 group-hover:bg-[#7DF9FF] group-hover:text-slate-950 transition-colors">
+                  <MapPin className="w-5 h-5 text-[#7DF9FF] group-hover:text-slate-950" />
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-wider font-extrabold text-slate-400">Site Experience Center</div>
@@ -193,7 +193,7 @@ export default function CTAContact() {
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             whileHover={prefersReducedMotion ? {} : { y: -4, transition: { duration: 0.3 } }}
-            className="lg:col-span-7 bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-2xl shadow-[#E05800]/10 relative hover:border-[#E05800]/40 transition-all duration-300"
+            className="lg:col-span-7 bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-2xl shadow-[#7DF9FF]/10 relative hover:border-[#7DF9FF]/60 transition-all duration-300"
           >
             <motion.h3
               custom={0}
@@ -260,7 +260,7 @@ export default function CTAContact() {
                     <input
                       {...register("fullName")}
                       placeholder="e.g. Ananya Pattnaik"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#E05800] focus:bg-white focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#7DF9FF] focus:bg-white focus:outline-none transition-colors"
                     />
                     {errors.fullName && (
                       <p className="text-xs text-red-600 mt-1">{errors.fullName.message}</p>
@@ -274,7 +274,7 @@ export default function CTAContact() {
                     <input
                       {...register("phone")}
                       placeholder="10-digit mobile number"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#E05800] focus:bg-white focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#7DF9FF] focus:bg-white focus:outline-none transition-colors"
                     />
                     {errors.phone && (
                       <p className="text-xs text-red-600 mt-1">{errors.phone.message}</p>
@@ -297,7 +297,7 @@ export default function CTAContact() {
                     <input
                       {...register("email")}
                       placeholder="name@example.com"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#E05800] focus:bg-white focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#7DF9FF] focus:bg-white focus:outline-none transition-colors"
                     />
                     {errors.email && (
                       <p className="text-xs text-red-600 mt-1">{errors.email.message}</p>
@@ -310,7 +310,7 @@ export default function CTAContact() {
                     </label>
                     <select
                       {...register("unitInterest")}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:border-[#E05800] focus:bg-white focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:border-[#7DF9FF] focus:bg-white focus:outline-none transition-colors"
                     >
                       <option value="2 BHK">2 BHK Luxury Residence</option>
                       <option value="3 BHK">3 BHK River-Facing Residence</option>
@@ -333,7 +333,7 @@ export default function CTAContact() {
                   <input
                     type="date"
                     {...register("preferredVisitDate")}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:border-[#E05800] focus:bg-white focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:border-[#7DF9FF] focus:bg-white focus:outline-none transition-colors"
                   />
                 </motion.div>
 
@@ -351,7 +351,7 @@ export default function CTAContact() {
                     {...register("message")}
                     rows={3}
                     placeholder="Tell us about your home preferences..."
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#E05800] focus:bg-white focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#7DF9FF] focus:bg-white focus:outline-none transition-colors"
                   />
                 </motion.div>
 
@@ -365,13 +365,13 @@ export default function CTAContact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 rounded-md bg-[#E05800] hover:bg-[#C74E00] text-white font-extrabold uppercase tracking-widest text-sm shadow-lg shadow-[#E05800]/25 transition-all flex items-center justify-center gap-2 transform active:scale-98 hover:scale-[1.01] animate-pulse-glow"
+                    className="w-full py-4 rounded-md bg-[#7DF9FF] hover:bg-[#AFEEEE] text-slate-950 font-black uppercase tracking-widest text-sm shadow-lg shadow-[#7DF9FF]/30 transition-all flex items-center justify-center gap-2 transform active:scale-98 hover:scale-[1.01] animate-pulse-glow"
                   >
                     {isSubmitting ? (
                       <span>Submitting Enquiry...</span>
                     ) : (
                       <>
-                        <Send className="w-4 h-4" />
+                        <Send className="w-4 h-4 text-slate-950" />
                         <span>Request VIP Callback & Site Visit</span>
                       </>
                     )}

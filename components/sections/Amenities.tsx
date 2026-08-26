@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Dumbbell, Users, Sun, Coffee, Sparkles } from "lucide-react";
 import cascadeContent from "@/content/cascade.json";
+import WaveBackground from "@/components/effects/WaveBackground";
 
 export default function Amenities() {
   const categories = cascadeContent.amenities.categories;
@@ -39,12 +40,14 @@ export default function Amenities() {
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         className="py-24 bg-white relative overflow-hidden border-b border-slate-200"
       >
+        {/* White-theme wave — decorative bottom watermark */}
+        <WaveBackground theme="white" height={140} position="bottom" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* Title */}
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs uppercase tracking-widest font-extrabold mb-4 shadow-sm">
-              <Sparkles className="w-3.5 h-3.5 text-[#E05800]" />
+              <Sparkles className="w-3.5 h-3.5 text-[#7DF9FF]" />
               <span>25+ World-Class Amenities</span>
             </div>
             <h2 className="font-display text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4">
@@ -65,7 +68,7 @@ export default function Amenities() {
                   onClick={() => setActiveTab(cat.id)}
                   className={`flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${
                     isActive
-                      ? "bg-[#E05800] text-white shadow-md shadow-[#E05800]/25 scale-105"
+                      ? "bg-[#7DF9FF] text-slate-950 shadow-md shadow-[#7DF9FF]/30 scale-105"
                       : "bg-slate-100 text-slate-700 hover:text-slate-900 border border-slate-200 hover:bg-slate-200"
                   }`}
                 >
@@ -131,7 +134,7 @@ export default function Amenities() {
                         ? {}
                         : { y: -6, transition: { duration: 0.25, ease: "easeOut" } }
                     }
-                    className="group relative rounded-2xl overflow-hidden bg-slate-50 border border-slate-200 hover:border-[#E05800]/50 transition-all duration-300 shadow-sm hover:shadow-xl flex flex-col cursor-pointer"
+                    className="group relative rounded-2xl overflow-hidden bg-slate-50 border border-slate-200 hover:border-[#7DF9FF]/60 transition-all duration-300 shadow-sm hover:shadow-xl flex flex-col cursor-pointer"
                   >
                     {/* Card Image */}
                     <div className="relative h-48 w-full overflow-hidden bg-slate-200">
@@ -147,7 +150,7 @@ export default function Amenities() {
                     {/* Card Copy */}
                     <div className="p-5 flex-1 flex flex-col justify-between bg-white">
                       <div>
-                        <h3 className="font-display font-extrabold text-slate-900 text-base mb-1 group-hover:text-[#E05800] transition-colors">
+                        <h3 className="font-display font-extrabold text-slate-900 text-base mb-1 group-hover:text-[#007BA7] transition-colors">
                           {item.name}
                         </h3>
                         <p className="text-slate-600 text-xs leading-relaxed">

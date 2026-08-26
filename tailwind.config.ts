@@ -23,19 +23,26 @@ const config: Config = {
           600: "#C74E00",
           700: "#B34400",
         },
+        // 4 Exact Requested Electric Waterfront Colors
+        electric: "#7DF9FF", // Electric Blue #7DF9FF rgb(125,249,255)
+        turquoise: "#AFEEEE", // Pale Turquoise #AFEEEE rgb(175,238,238)
+        waterspout: "#A4F4F9", // Waterspout #A4F4F9 rgb(164,244,249)
+        cyanLight: "#E0FFFF", // Light Cyan #E0FFFF rgb(224,255,255)
+
+        // Mapped river / cerulean palette using the 4 requested bright cyan/turquoise codes
         cerulean: {
-          300: "#3395B9",
-          400: "#1A88B0",
-          500: "#007BA7", // Cerulean #007BA7 (rgb(0, 123, 167))
-          600: "#00678C",
-          700: "#005371",
+          300: "#E0FFFF", // Light Cyan
+          400: "#A4F4F9", // Waterspout
+          500: "#AFEEEE", // Pale Turquoise
+          600: "#7DF9FF", // Electric Blue
+          700: "#50E0F0",
         },
         river: {
-          300: "#3395B9",
-          400: "#1A88B0",
-          500: "#007BA7", // Cerulean #007BA7 (rgb(0, 123, 167))
-          600: "#00678C",
-          700: "#005371",
+          300: "#E0FFFF", // Light Cyan
+          400: "#A4F4F9", // Waterspout
+          500: "#AFEEEE", // Pale Turquoise
+          600: "#7DF9FF", // Electric Blue
+          700: "#50E0F0",
         },
         gold: {
           300: "#FCD34D",
@@ -52,13 +59,14 @@ const config: Config = {
       },
       backgroundImage: {
         "red-gradient": "linear-gradient(135deg, #E11D48 0%, #D9232D 50%, #991B1B 100%)",
-        "river-gradient": "linear-gradient(135deg, #1A88B0 0%, #007BA7 50%, #005371 100%)",
+        "river-gradient": "linear-gradient(135deg, #7DF9FF 0%, #A4F4F9 50%, #AFEEEE 100%)",
+        "electric-gradient": "linear-gradient(135deg, #7DF9FF 0%, #A4F4F9 50%, #AFEEEE 100%)",
         "hero-overlay": "linear-gradient(90deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.75) 45%, rgba(255,255,255,0.1) 100%)",
         "glass-light": "linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%)",
       },
       boxShadow: {
         "red-glow": "0 10px 25px -5px rgba(217, 35, 45, 0.4)",
-        "cerulean-glow": "0 10px 25px -5px rgba(0, 123, 167, 0.4)",
+        "electric-glow": "0 10px 25px -5px rgba(125, 249, 255, 0.5)",
         "card-hover": "0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04)",
       },
     },

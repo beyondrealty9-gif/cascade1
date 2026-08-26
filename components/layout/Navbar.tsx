@@ -134,7 +134,7 @@ export default function Navbar({ onOpenEnquiryModal, onOpenBrochureModal }: Navb
 
               <button
                 onClick={onOpenEnquiryModal}
-                className="hidden sm:inline-block px-5 py-2 rounded-md bg-[#E05800] hover:bg-[#C74E00] text-white text-xs font-black uppercase tracking-wider shadow-sm transition-all"
+                className="hidden sm:inline-block px-5 py-2 rounded-md bg-[#7DF9FF] hover:bg-[#AFEEEE] text-slate-950 text-xs font-black uppercase tracking-wider shadow-md transition-all"
               >
                 DISCOVER
               </button>
@@ -181,7 +181,7 @@ export default function Navbar({ onOpenEnquiryModal, onOpenBrochureModal }: Navb
                   setMobileMenuOpen(false);
                   onOpenEnquiryModal();
                 }}
-                className="w-full flex items-center justify-center gap-2 text-xs font-black uppercase tracking-wider text-white bg-[#D8232A] py-3 rounded-md shadow-md"
+                className="w-full flex items-center justify-center gap-2 text-xs font-black uppercase tracking-wider text-slate-950 bg-[#7DF9FF] hover:bg-[#AFEEEE] py-3 rounded-md shadow-md"
               >
                 DISCOVER HOMES
               </button>

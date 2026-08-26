@@ -99,7 +99,7 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
             {/* Close X Button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-950 text-white flex items-center justify-center hover:bg-[#E05800] transition-colors shadow-md z-20"
+              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-950 text-white flex items-center justify-center hover:bg-[#7DF9FF] hover:text-slate-950 transition-colors shadow-md z-20"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
@@ -107,8 +107,8 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
 
             {/* Header Badge */}
             <div className="text-center mb-6">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-[#E05800] text-xs font-black uppercase tracking-wider mb-3 shadow-sm">
-                <Home className="w-4 h-4" />
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-black uppercase tracking-wider mb-3 shadow-sm">
+                <Home className="w-4 h-4 text-[#7DF9FF]" />
                 <span>BOOK A FREE SITE VISIT</span>
               </div>
 
@@ -131,7 +131,7 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                     setSubmitSuccess(false);
                     onClose();
                   }}
-                  className="px-6 py-2.5 rounded-xl bg-[#E05800] text-white font-extrabold text-xs uppercase tracking-wider shadow-md hover:bg-[#C74E00] transition-colors"
+                  className="px-6 py-2.5 rounded-xl bg-[#7DF9FF] text-slate-950 font-black text-xs uppercase tracking-wider shadow-md hover:bg-[#AFEEEE] transition-colors"
                 >
                   Close & View Site
                 </button>
@@ -147,14 +147,14 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                 {/* FULL NAME (LETTERS ONLY) */}
                 <div>
                   <label className="block text-[11px] font-extrabold uppercase text-slate-700 mb-1">
-                    FULL NAME (LETTERS ONLY) <span className="text-[#E05800]">*</span>
+                    FULL NAME (LETTERS ONLY) <span className="text-[#7DF9FF]">*</span>
                   </label>
                   <div className="relative">
                     <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                     <input
                       {...register("fullName")}
                       placeholder="Enter your full name"
-                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#E05800] focus:bg-white focus:outline-none transition-colors font-medium"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#7DF9FF] focus:bg-white focus:outline-none transition-colors font-medium"
                     />
                   </div>
                   {errors.fullName && (
@@ -165,14 +165,14 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                 {/* MOBILE NUMBER (NUMBERS ONLY) */}
                 <div>
                   <label className="block text-[11px] font-extrabold uppercase text-slate-700 mb-1">
-                    MOBILE NUMBER (NUMBERS ONLY) <span className="text-[#E05800]">*</span>
+                    MOBILE NUMBER (NUMBERS ONLY) <span className="text-[#7DF9FF]">*</span>
                   </label>
                   <div className="relative">
                     <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                     <input
                       {...register("phone")}
                       placeholder="Enter 10-digit mobile number"
-                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#E05800] focus:bg-white focus:outline-none transition-colors font-medium"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#7DF9FF] focus:bg-white focus:outline-none transition-colors font-medium"
                     />
                   </div>
                   {errors.phone && (
@@ -183,14 +183,14 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                 {/* EMAIL ADDRESS (FOR EMAIL DELIVERY) */}
                 <div>
                   <label className="block text-[11px] font-extrabold uppercase text-slate-700 mb-1">
-                    EMAIL ADDRESS (FOR EMAIL DELIVERY) <span className="text-[#E05800]">*</span>
+                    EMAIL ADDRESS (FOR EMAIL DELIVERY) <span className="text-[#7DF9FF]">*</span>
                   </label>
                   <div className="relative">
                     <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                     <input
                       {...register("email")}
                       placeholder="Enter your email address"
-                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#E05800] focus:bg-white focus:outline-none transition-colors font-medium"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#7DF9FF] focus:bg-white focus:outline-none transition-colors font-medium"
                     />
                   </div>
                   {errors.email && (
@@ -206,7 +206,7 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                     </label>
                     <select
                       {...register("unitInterest")}
-                      className="w-full px-3 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-xs font-bold focus:border-[#E05800] focus:bg-white focus:outline-none transition-colors"
+                      className="w-full px-3 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-xs font-bold focus:border-[#7DF9FF] focus:bg-white focus:outline-none transition-colors"
                     >
                       <option value="2 BHK">2 BHK Residence</option>
                       <option value="3 BHK">3 BHK River View</option>
@@ -221,7 +221,7 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                     </label>
                     <select
                       {...register("purchaseTimeline")}
-                      className="w-full px-3 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-xs font-bold focus:border-[#E05800] focus:bg-white focus:outline-none transition-colors"
+                      className="w-full px-3 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-xs font-bold focus:border-[#7DF9FF] focus:bg-white focus:outline-none transition-colors"
                     >
                       <option value="Within 1 Month">Within 1 Month</option>
                       <option value="1-3 Months">1-3 Months</option>
@@ -237,7 +237,7 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                     type="checkbox"
                     id="sendWhatsApp"
                     {...register("sendWhatsApp")}
-                    className="w-4 h-4 rounded text-[#E05800] focus:ring-[#E05800] border-slate-300 accent-[#E05800]"
+                    className="w-4 h-4 rounded text-[#7DF9FF] focus:ring-[#7DF9FF] border-slate-300 accent-[#7DF9FF]"
                   />
                   <label htmlFor="sendWhatsApp" className="text-xs font-semibold text-slate-700 cursor-pointer">
                     Send e-brochure to my WhatsApp & Email.
@@ -248,13 +248,13 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-[#E05800] via-amber-600 to-[#E05800] hover:from-[#C74E00] hover:to-[#C74E00] text-white font-extrabold uppercase tracking-widest text-xs shadow-lg shadow-[#E05800]/30 transition-all flex items-center justify-center gap-2 transform active:scale-98 hover:scale-[1.01]"
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-[#7DF9FF] via-[#A4F4F9] to-[#AFEEEE] hover:from-[#AFEEEE] hover:to-[#7DF9FF] text-slate-950 font-black uppercase tracking-widest text-xs shadow-lg shadow-[#7DF9FF]/40 transition-all flex items-center justify-center gap-2 transform active:scale-98 hover:scale-[1.01]"
                 >
                   {isSubmitting ? (
                     <span>Processing Request...</span>
                   ) : (
                     <>
-                      <Sparkles className="w-4 h-4" />
+                      <Sparkles className="w-4 h-4 text-slate-950" />
                       <span>GET PRICE & BROCHURE</span>
                     </>
                   )}

@@ -97,9 +97,9 @@ export default function BrochureModal({ isOpen, onClose }: BrochureModalProps) {
 
             <button
               type="submit"
-              className="w-full py-3.5 rounded-md bg-[#E05800] hover:bg-[#C74E00] text-white font-extrabold uppercase tracking-widest text-xs shadow-md transition-all flex items-center justify-center gap-2"
+              className="w-full py-3.5 rounded-md bg-[#7DF9FF] hover:bg-[#AFEEEE] text-slate-950 font-black uppercase tracking-widest text-xs shadow-md transition-all flex items-center justify-center gap-2"
             >
-              <Download className="w-4 h-4" />
+              <Download className="w-4 h-4 text-slate-950" />
               <span>Instant Download Brochure</span>
             </button>
           </form>

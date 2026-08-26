@@ -50,10 +50,10 @@ export default function ProjectSnapshot() {
   }, []);
 
   const icons = [
-    <Home className="w-6 h-6 text-[#E05800]" key="0" />,
-    <Compass className="w-6 h-6 text-[#007BA7]" key="1" />,
+    <Home className="w-6 h-6 text-[#7DF9FF]" key="0" />,
+    <Compass className="w-6 h-6 text-[#7DF9FF]" key="1" />,
     <Sparkles className="w-6 h-6 text-amber-500" key="2" />,
-    <Building2 className="w-6 h-6 text-[#E05800]" key="3" />,
+    <Building2 className="w-6 h-6 text-[#7DF9FF]" key="3" />,
   ];
 
   // Grid Stagger Container Variants with staggerChildren: 0.12
@@ -98,7 +98,7 @@ export default function ProjectSnapshot() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-800 text-xs uppercase tracking-widest font-extrabold mb-4 shadow-sm"
           >
-            <Tag className="w-3.5 h-3.5 text-[#E05800]" />
+            <Tag className="w-3.5 h-3.5 text-[#7DF9FF]" />
             <span>PROJECT SNAPSHOT</span>
           </motion.div>
 
@@ -135,8 +135,8 @@ export default function ProjectSnapshot() {
                 }
                 className={`p-8 rounded-2xl bg-white transition-all duration-300 group cursor-pointer ${
                   isHighlighted
-                    ? "border-2 border-[#007BA7] shadow-lg shadow-[#007BA7]/10 animate-pulse-glow-border"
-                    : "border border-slate-200 shadow-sm hover:border-[#E05800]/40 hover:shadow-xl"
+                    ? "border-2 border-[#7DF9FF] shadow-lg shadow-[#7DF9FF]/20 animate-pulse-glow-border"
+                    : "border border-slate-200 shadow-sm hover:border-[#7DF9FF]/60 hover:shadow-xl"
                 }`}
               >
                 {/* Pop Icon */}
@@ -151,7 +151,7 @@ export default function ProjectSnapshot() {
                 </div>
 
                 {/* Value text with Count-Up animation for numeric stats */}
-                <div className="font-display text-2xl sm:text-3xl font-black text-slate-900 mb-2 group-hover:text-[#E05800] transition-colors">
+                <div className="font-display text-2xl sm:text-3xl font-black text-slate-900 mb-2 group-hover:text-[#7DF9FF] transition-colors">
                   {idx === 1 ? (
                     <>
                       <AnimatedCountUp

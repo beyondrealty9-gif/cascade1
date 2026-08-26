@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { generateProjectMetadata, generateRealEstateSchema } from "@/lib/seo";
-import Preloader from "@/components/Preloader";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -34,7 +33,6 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-background text-gray-100 font-body antialiased min-h-screen">
-        <Preloader />
         {children}
       </body>
     </html>
