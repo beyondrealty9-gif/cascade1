@@ -6,7 +6,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import FoldText from "@/components/ui/FoldText";
-import WaterBubbles from "@/components/effects/WaterBubbles";
 import cascadeContent from "@/content/cascade.json";
 
 // Hero-only 3D water — lazy loaded, SSR disabled
@@ -82,14 +81,9 @@ export default function HeroVideo({ onOpenEnquiryModal }: HeroVideoProps) {
 
         {/* 3D Water band — bottom third, available on both mobile and desktop */}
         {!prefersReducedMotion && (
-          <>
-            <div className="absolute bottom-0 left-0 right-0 h-[38%] opacity-80 pointer-events-none z-[1]">
-              <RealisticWater3D />
-            </div>
-            <div className="absolute bottom-0 left-0 right-0 h-[38%] pointer-events-none z-[2]">
-              <WaterBubbles count={28} color="125,249,255" className="absolute inset-0" />
-            </div>
-          </>
+          <div className="absolute bottom-0 left-0 right-0 h-[38%] opacity-80 pointer-events-none z-[1]">
+            <RealisticWater3D />
+          </div>
         )}
 
         {/* Hero Content Container */}

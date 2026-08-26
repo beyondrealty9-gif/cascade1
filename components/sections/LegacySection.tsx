@@ -6,7 +6,6 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Award, Building2, Users } from "lucide-react";
 import ScrambledText from "@/components/ui/ScrambledText";
-import WaterBubbles from "@/components/effects/WaterBubbles";
 import WaveBackground from "@/components/effects/WaveBackground";
 import cascadeContent from "@/content/cascade.json";
 
@@ -148,9 +147,8 @@ export default function LegacySection() {
             : "relative z-[2] bg-white border-t border-slate-200 shadow-2xl py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
         }
       >
-        {/* Real 3D Shallow Water Physics Ripple Engine + Floating Bubbles & Waves */}
+        {/* Real 3D Shallow Water Physics Ripple Engine & Wave Background */}
         <SectionWaterDrop opacity={0.45} />
-        <WaterBubbles count={28} color="125,249,255" className="absolute inset-0 z-0 opacity-75" />
         <WaveBackground theme="white" height={160} position="bottom" />
 
         <div className="max-w-7xl mx-auto relative z-10">

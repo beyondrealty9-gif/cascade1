@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { CheckCircle2, Waves, Wind, Eye } from "lucide-react";
 import cascadeContent from "@/content/cascade.json";
 import WaveBackground from "@/components/effects/WaveBackground";
-import WaterBubbles from "@/components/effects/WaterBubbles";
 
 export default function MahanadiAdvantage() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -69,9 +68,8 @@ export default function MahanadiAdvantage() {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent lg:hidden" />
         </motion.div>
 
-        {/* Ocean wave + bubbles overlay — on top of video, below text */}
-        <WaveBackground theme="ocean" height={180} position="bottom" />
-        <WaterBubbles count={18} color="125,249,255" className="absolute inset-0" />
+        {/* Dark theme wave — bottom decorative watermark */}
+        <WaveBackground theme="dark" height={160} position="bottom" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

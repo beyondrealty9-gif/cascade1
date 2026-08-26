@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import WaterBubbles from "@/components/effects/WaterBubbles";
 
 // Water drop ripple — canvas only, no SSR needed
 const PreloaderWater = dynamic(
@@ -91,15 +90,6 @@ export default function Preloader() {
             >
               <PreloaderWater className="w-full h-full absolute inset-0 opacity-60" />
             </motion.div>
-          )}
-
-          {/* ── 2. RISING BUBBLES ── */}
-          {!shouldReduceMotion && (
-            <WaterBubbles
-              count={22}
-              color="125,249,255"
-              className="absolute inset-0 opacity-70"
-            />
           )}
 
           {/* ── 3. LARGE AMBIENT GLOW ORBS (electric blue radials) ── */}

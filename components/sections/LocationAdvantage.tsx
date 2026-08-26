@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { MapPin, Navigation, TrendingUp, Trees } from "lucide-react";
 import cascadeContent from "@/content/cascade.json";
 import WaveBackground from "@/components/effects/WaveBackground";
-import WaterBubbles from "@/components/effects/WaterBubbles";
 
 export default function LocationAdvantage() {
   const cards = cascadeContent.location.cards;
@@ -69,7 +68,6 @@ export default function LocationAdvantage() {
 
         {/* Ocean waves rippling across the location render backdrop */}
         <WaveBackground theme="ocean" height={160} position="bottom" />
-        <WaterBubbles count={14} color="164,244,249" className="absolute inset-0" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
