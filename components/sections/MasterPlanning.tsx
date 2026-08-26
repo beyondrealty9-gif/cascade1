@@ -58,6 +58,22 @@ export default function MasterPlanning() {
     "Double-Height Luxury Air-Conditioned Clubhouse",
   ];
 
+  const revealVariants = [
+    { initial: { opacity: 0, y: 80 }, animate: { opacity: 1, y: 0 } }, // 01 slide up
+    { initial: { opacity: 0, x: -120 }, animate: { opacity: 1, x: 0 } }, // 02 slide from left
+    { initial: { opacity: 0, x: 120 }, animate: { opacity: 1, x: 0 } }, // 03 slide from right
+    { initial: { opacity: 0, y: -80 }, animate: { opacity: 1, y: 0 } }, // 04 slide down
+    { initial: { opacity: 0, scale: 0.85 }, animate: { opacity: 1, scale: 1 } }, // 05 zoom in
+    { initial: { opacity: 0, scale: 1.15 }, animate: { opacity: 1, scale: 1 } }, // 06 zoom out
+    { initial: { opacity: 0, x: -80, y: 40 }, animate: { opacity: 1, x: 0, y: 0 } }, // 07 diagonal TL
+    { initial: { opacity: 0, x: 80, y: -40 }, animate: { opacity: 1, x: 0, y: 0 } }, // 08 diagonal BR
+    { initial: { opacity: 0, rotate: -3, scale: 0.92 }, animate: { opacity: 1, rotate: 0, scale: 1 } }, // 09 tilt in
+    { initial: { opacity: 0, clipPath: "inset(0 100% 0 0)" }, animate: { opacity: 1, clipPath: "inset(0 0% 0 0)" } }, // 10 wipe L-R
+    { initial: { opacity: 0, clipPath: "inset(0 0 0 100%)" }, animate: { opacity: 1, clipPath: "inset(0 0 0 0%)" } }, // 11 wipe R-L
+    { initial: { opacity: 0, y: 60, scale: 0.95 }, animate: { opacity: 1, y: 0, scale: 1 } }, // 12 rise+zoom
+    { initial: { opacity: 0, x: -60, scale: 1.05 }, animate: { opacity: 1, x: 0, scale: 1 } }, // 13 slide+settle
+  ];
+
   return (
     <div className="w-full overflow-hidden bg-slate-950 text-white">
       <section id="masterplan" className="py-12 sm:py-20 lg:py-24 bg-slate-950 relative overflow-hidden border-b border-slate-800">
@@ -84,7 +100,7 @@ export default function MasterPlanning() {
                 key={idx}
                 initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
                 whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.05 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="flex items-center gap-3 p-4 rounded-xl bg-slate-900/80 border border-slate-800 shadow-sm"
               >
@@ -94,16 +110,26 @@ export default function MasterPlanning() {
             ))}
           </div>
 
-          {/* MAIN SPOTLIGHT CINEMA FRAME (Active Render 100% Centered & Un-clipped) */}
-          <div className="relative w-full mb-10">
-            <motion.div
-              key={activeIdx}
-              initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.97 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="relative w-full h-[380px] sm:h-[500px] rounded-3xl overflow-hidden border-2 border-[#7DF9FF]/60 shadow-2xl shadow-[#7DF9FF]/20 bg-slate-900 group cursor-pointer"
-              onClick={() => setSelectedImage(activeItem.image)}
-            >
+          {/* MAIN SPOTLIGHT CINEMA FRAME (Active Render 100% Centered with 13 Unique Per-Slide Motion Reveals) */}
+          <div className="relative w-full mb-10 overflow-hidden rounded-3xl min-h-[380px] sm:min-h-[500px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIdx}
+                initial={
+                  prefersReducedMotion
+                    ? { opacity: 0 }
+                    : revealVariants[activeIdx % revealVariants.length].initial
+                }
+                animate={
+                  prefersReducedMotion
+                    ? { opacity: 1 }
+                    : revealVariants[activeIdx % revealVariants.length].animate
+                }
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                className="relative w-full h-[380px] sm:h-[500px] rounded-3xl overflow-hidden border-2 border-[#7DF9FF]/60 shadow-2xl shadow-[#7DF9FF]/20 bg-slate-900 group cursor-pointer"
+                onClick={() => setSelectedImage(activeItem.image)}
+              >
               <Image
                 src={activeItem.image}
                 alt={activeItem.title}
@@ -163,7 +189,8 @@ export default function MasterPlanning() {
                 </button>
               </div>
             </motion.div>
-          </div>
+          </AnimatePresence>
+        </div>
 
           {/* 🎬 FILM STRIP THUMBNAILS HORIZONTAL REEL (13 Items) */}
           <div className="relative w-full bg-slate-900/60 rounded-2xl p-4 border border-slate-800 border-dashed">
