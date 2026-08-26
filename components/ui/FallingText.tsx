@@ -169,7 +169,7 @@ export default function FallingText({
       if (render.canvas && canvasContainerRef.current && canvasContainerRef.current.contains(render.canvas)) {
         canvasContainerRef.current.removeChild(render.canvas);
       }
-      World.clear(engine.world);
+      World.clear(engine.world, false);
       Engine.clear(engine);
     };
   }, [effectStarted, gravity, wireframes, backgroundColor, mouseConstraintStiffness]);
