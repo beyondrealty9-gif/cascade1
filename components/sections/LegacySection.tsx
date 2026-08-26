@@ -57,34 +57,35 @@ function AnimatedCounter({ end, duration = 2000, suffix = "" }: { end: number; d
 
 export default function LegacySection() {
   const outerContainerRef = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(true); // Default to true for mobile-first safety
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const checkMobile = () => setIsMobile(window.innerWidth < 768);
-      checkMobile();
-      window.addEventListener("resize", checkMobile);
+    setMounted(true);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
 
-      setPrefersReducedMotion(
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      );
+    setPrefersReducedMotion(
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    );
 
-      return () => window.removeEventListener("resize", checkMobile);
-    }
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Framer Motion Scroll Progress for Outer Container (pin-and-cover range)
+  // Framer Motion Scroll Progress for Outer Container (pin-and-cover range on Desktop only)
   const { scrollYProgress } = useScroll({
     target: outerContainerRef,
     offset: ["start start", "end end"],
   });
 
-  // Drive Trusted Partners section y position from 100vh -> 0vh as user scrolls
+  // Drive Trusted Partners section y position from 100vh -> 0vh as user scrolls (Desktop only)
   const coverY = useTransform(scrollYProgress, [0, 0.55, 1], ["100vh", "0vh", "0vh"]);
   const coverRadius = useTransform(scrollYProgress, [0, 0.55], ["48px", "0px"]);
 
-  const disablePinCover = isMobile || prefersReducedMotion;
+  // Enable sticky pin-cover ONLY on desktop (mounted && !isMobile && !prefersReducedMotion)
+  const enablePinCover = mounted && !isMobile && !prefersReducedMotion;
 
   const partners = [
     { name: "HDFC BANK", tag: "Approved Partner" },
@@ -100,17 +101,17 @@ export default function LegacySection() {
       ref={outerContainerRef}
       id="legacy"
       className={`w-full relative bg-white ${
-        disablePinCover ? "py-16 sm:py-24" : "min-h-[220vh]"
+        enablePinCover ? "min-h-[220vh]" : "py-12 sm:py-20 lg:py-24"
       }`}
     >
       {/* ========================================================================= */}
-      {/* PART A: DARK STATS BANNER SECTION (PINNED STICKY BASE)                  */}
+      {/* PART A: DARK STATS BANNER SECTION (DESKTOP PINNED STICKY BASE / MOBILE NORMAL) */}
       {/* ========================================================================= */}
       <div
         className={
-          disablePinCover
-            ? "w-full py-8 bg-slate-950 px-4 sm:px-6 lg:px-8 mb-12"
-            : "sticky top-0 h-[85vh] z-[1] overflow-hidden flex items-center justify-center bg-slate-950 px-4 sm:px-6 lg:px-8"
+          enablePinCover
+            ? "sticky top-0 h-[85vh] z-[1] overflow-hidden flex items-center justify-center bg-slate-950 px-4 sm:px-6 lg:px-8"
+            : "w-full py-6 sm:py-10 bg-slate-950 px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12"
         }
       >
         <div className="max-w-7xl mx-auto w-full">
@@ -129,22 +130,22 @@ export default function LegacySection() {
       </div>
 
       {/* ========================================================================= */}
-      {/* PART B: TRUSTED PARTNERS & HERITAGE SECTION (SLIDES UP OVER PINNED BANNER) */}
+      {/* PART B: TRUSTED PARTNERS & HERITAGE SECTION (SLIDES UP ON DESKTOP / STACKS ON MOBILE) */}
       {/* ========================================================================= */}
       <motion.div
         style={
-          disablePinCover
-            ? {}
-            : {
+          enablePinCover
+            ? {
                 y: coverY,
                 borderTopLeftRadius: coverRadius,
                 borderTopRightRadius: coverRadius,
               }
+            : {}
         }
         className={
-          disablePinCover
-            ? "w-full bg-white relative z-[2] px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-24 overflow-hidden"
-            : "relative z-[2] bg-white border-t border-slate-200 shadow-2xl py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+          enablePinCover
+            ? "relative z-[2] bg-white border-t border-slate-200 shadow-2xl py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+            : "w-full bg-white relative z-[2] px-4 sm:px-6 lg:px-8 py-8 sm:py-16 overflow-hidden"
         }
       >
         {/* Real 3D Shallow Water Physics Ripple Engine & Wave Background */}
