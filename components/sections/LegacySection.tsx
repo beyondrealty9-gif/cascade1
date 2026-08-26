@@ -193,26 +193,31 @@ export default function LegacySection() {
             ))}
           </div>
 
-          {/* Motwani Trust Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {cascadeContent.legacy.stats.map((stat, idx) => (
-              <div
-                key={idx}
-                className="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#7DF9FF]/60 transition-all duration-300 shadow-sm hover:shadow-xl group hover:-translate-y-1"
-              >
-                <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-6 shadow-sm group-hover:bg-[#7DF9FF] transition-colors">
-                  {idx === 0 && <Award className="w-6 h-6 text-[#007BA7] group-hover:text-slate-950 transition-colors" />}
-                  {idx === 1 && <Building2 className="w-6 h-6 text-[#007BA7] group-hover:text-slate-950 transition-colors" />}
-                  {idx === 2 && <Users className="w-6 h-6 text-[#007BA7] group-hover:text-slate-950 transition-colors" />}
-                </div>
+          {/* Motwani Trust Stats Cards (Mobile Sticky-Stack Scroll Effect / Desktop 3-Column Grid) */}
+          <div className="flex flex-col md:grid md:grid-cols-3 gap-8">
+            {cascadeContent.legacy.stats.map((stat, idx) => {
+              const stickyZIndex = idx === 0 ? "z-10" : idx === 1 ? "z-20" : "z-30";
+              const stickyMb = idx < 2 ? "mb-8 md:mb-0" : "";
 
-                <div className="font-display text-4xl sm:text-5xl font-black text-slate-900 tracking-tight mb-2 group-hover:text-[#007BA7] transition-colors">
-                  <AnimatedCounter end={stat.numeric} suffix={stat.suffix} />
+              return (
+                <div
+                  key={idx}
+                  className={`p-8 rounded-2xl bg-white border border-slate-200/90 hover:border-[#7DF9FF]/60 transition-all duration-300 shadow-md hover:shadow-xl group hover:-translate-y-1 sticky top-24 ${stickyZIndex} md:static md:z-auto ${stickyMb}`}
+                >
+                  <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center mb-6 shadow-sm group-hover:bg-[#7DF9FF] transition-colors">
+                    {idx === 0 && <Award className="w-6 h-6 text-[#007BA7] group-hover:text-slate-950 transition-colors" />}
+                    {idx === 1 && <Building2 className="w-6 h-6 text-[#007BA7] group-hover:text-slate-950 transition-colors" />}
+                    {idx === 2 && <Users className="w-6 h-6 text-[#007BA7] group-hover:text-slate-950 transition-colors" />}
+                  </div>
+
+                  <div className="font-display text-4xl sm:text-5xl font-black text-slate-900 tracking-tight mb-2 group-hover:text-[#007BA7] transition-colors">
+                    <AnimatedCounter end={stat.numeric} suffix={stat.suffix} />
+                  </div>
+                  <div className="font-display text-lg font-extrabold text-slate-800 mb-2">{stat.label}</div>
+                  <p className="text-sm text-slate-600 leading-relaxed">{stat.desc}</p>
                 </div>
-                <div className="font-display text-lg font-extrabold text-slate-800 mb-2">{stat.label}</div>
-                <p className="text-sm text-slate-600 leading-relaxed">{stat.desc}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </motion.div>

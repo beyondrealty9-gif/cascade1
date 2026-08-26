@@ -129,7 +129,7 @@ export default function RealisticWater3D({
     <Canvas
       camera={{ position: [0, 1.6, 4.2], fov: 55 }}
       dpr={[1, 1.5]} // cap DPR — big perf win on retina/mobile
-      gl={{ antialias: true, alpha: true }}
+      gl={{ antialias: false, alpha: true, powerPreference: "high-performance" }}
     >
       <Suspense fallback={null}>
         <WaterPlane colors={colors} />
