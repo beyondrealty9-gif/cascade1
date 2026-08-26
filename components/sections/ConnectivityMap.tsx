@@ -27,6 +27,18 @@ export default function ConnectivityMap() {
     <Building className="w-5 h-5" key="5" />,
   ];
 
+  // Calculated coordinates for 6 radial orbit positions relative to center (250, 225)
+  const angles = [0, 60, 120, 180, 240, 300];
+  const radii = [100, 140, 160, 175, 180, 185];
+
+  const orbitPositions = destinations.map((_, idx) => {
+    const angle = angles[idx];
+    const rad = (angle * Math.PI) / 180;
+    const targetX = Math.cos(rad) * radii[idx];
+    const targetY = Math.sin(rad) * radii[idx];
+    return { targetX, targetY };
+  });
+
   return (
     <div className="w-full overflow-hidden bg-white">
       <section id="connectivity" className="py-24 bg-white relative overflow-hidden border-b border-slate-200">
@@ -41,7 +53,7 @@ export default function ConnectivityMap() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs uppercase tracking-widest font-extrabold mb-4 shadow-sm"
             >
-              <Navigation className="w-3.5 h-3.5 text-river-600" />
+              <Navigation className="w-3.5 h-3.5 text-[#007BA7]" />
               <span>Strategic Distance Radar</span>
             </motion.div>
 
@@ -68,7 +80,7 @@ export default function ConnectivityMap() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            {/* Left Radial Radar Hub (SLIDE LEFT ENTRANCE) */}
+            {/* Left Radial Radar Hub (SLIDE LEFT ENTRANCE + SVG RADIAL LINE DRAWING) */}
             <motion.div
               initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, x: -80 }}
               whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, x: 0 }}
@@ -78,7 +90,51 @@ export default function ConnectivityMap() {
             >
               <div className="relative h-[380px] sm:h-[450px] w-full flex items-center justify-center">
                 
-                {/* Central Project Hub */}
+                {/* SVG SVG PATHLENGTH ANIMATED CONNECTING RADAR LINES (0 -> 1) */}
+                <svg
+                  className="absolute inset-0 w-full h-full pointer-events-none z-10"
+                  viewBox="0 0 500 450"
+                  preserveAspectRatio="xMidYMid meet"
+                >
+                  {destinations.map((_, idx) => {
+                    const pos = orbitPositions[idx];
+                    // Center of 500x450 viewBox is (250, 225)
+                    const x2 = 250 + pos.targetX;
+                    const y2 = 225 + pos.targetY;
+                    const isActive = activeIdx === idx;
+
+                    return (
+                      <motion.line
+                        key={idx}
+                        x1="250"
+                        y1="225"
+                        x2={x2}
+                        y2={y2}
+                        stroke={isActive ? "#E05800" : "#007BA7"}
+                        strokeWidth={isActive ? "2.5" : "1.5"}
+                        strokeDasharray="4 4"
+                        initial={
+                          prefersReducedMotion
+                            ? { pathLength: 1, opacity: 1 }
+                            : { pathLength: 0, opacity: 0 }
+                        }
+                        whileInView={
+                          prefersReducedMotion
+                            ? { pathLength: 1, opacity: 1 }
+                            : { pathLength: 1, opacity: 0.85 }
+                        }
+                        viewport={{ once: false, amount: 0.15 }}
+                        transition={{
+                          duration: 0.8,
+                          delay: prefersReducedMotion ? 0 : 0.15 + idx * 0.12,
+                          ease: [0.16, 1, 0.3, 1],
+                        }}
+                      />
+                    );
+                  })}
+                </svg>
+
+                {/* Central Project Hub ("Cascade" Node) */}
                 <div className="absolute z-20 flex flex-col items-center">
                   <div className="w-20 h-20 rounded-full bg-[#E05800] p-1 shadow-lg shadow-[#E05800]/30 animate-pulse">
                     <div className="w-full h-full bg-white rounded-full flex flex-col items-center justify-center text-center p-2">
@@ -101,15 +157,9 @@ export default function ConnectivityMap() {
                 />
                 <div className="absolute w-[380px] h-[380px] rounded-full border border-slate-200 pointer-events-none" />
 
-                {/* Radial Orbit Markers - Flying out from Center to Orbits */}
+                {/* Radial Orbit Markers */}
                 {destinations.map((dest, idx) => {
-                  const angles = [0, 60, 120, 180, 240, 300];
-                  const angle = angles[idx];
-                  const radii = [100, 140, 160, 175, 180, 185];
-                  const rad = (angle * Math.PI) / 180;
-                  const targetX = Math.cos(rad) * radii[idx];
-                  const targetY = Math.sin(rad) * radii[idx];
-
+                  const pos = orbitPositions[idx];
                   const isActive = activeIdx === idx;
 
                   return (
@@ -126,20 +176,20 @@ export default function ConnectivityMap() {
                           ? { opacity: 1 }
                           : {
                               opacity: 1,
-                              x: targetX,
-                              y: targetY,
+                              x: pos.targetX,
+                              y: pos.targetY,
                               scale: isActive ? 1.15 : 1,
                             }
                       }
                       animate={{
-                        x: targetX,
-                        y: targetY,
+                        x: pos.targetX,
+                        y: pos.targetY,
                         scale: isActive ? 1.15 : 1,
                       }}
                       viewport={{ once: false, amount: 0.15 }}
                       transition={{
                         duration: 0.8,
-                        delay: prefersReducedMotion ? 0 : 0.2 + idx * 0.1,
+                        delay: prefersReducedMotion ? 0 : 0.2 + idx * 0.12,
                         ease: [0.16, 1, 0.3, 1],
                       }}
                       whileHover={{ scale: isActive ? 1.2 : 1.1 }}
@@ -157,7 +207,7 @@ export default function ConnectivityMap() {
               </div>
             </motion.div>
 
-            {/* Right Destination Detail Cards List (SLIDE RIGHT ENTRANCE) */}
+            {/* Right Destination Detail Cards List (SYNCED STAGGERED FADE-UP) */}
             <motion.div
               initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, x: 80 }}
               whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, x: 0 }}
@@ -171,10 +221,22 @@ export default function ConnectivityMap() {
                   <motion.div
                     key={idx}
                     onClick={() => setActiveIdx(idx)}
-                    initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, x: 40 }}
-                    whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, x: 0 }}
+                    initial={
+                      prefersReducedMotion
+                        ? { opacity: 0 }
+                        : { opacity: 0, y: 25, x: 30 }
+                    }
+                    whileInView={
+                      prefersReducedMotion
+                        ? { opacity: 1 }
+                        : { opacity: 1, y: 0, x: 0 }
+                    }
                     viewport={{ once: false, amount: 0.15 }}
-                    transition={{ duration: 0.45, delay: 0.2 + idx * 0.08, ease: "easeOut" }}
+                    transition={{
+                      duration: 0.55,
+                      delay: prefersReducedMotion ? 0 : 0.25 + idx * 0.12,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
                     whileHover={prefersReducedMotion ? {} : { x: 8 }}
                     className={`p-4 rounded-xl border transition-all cursor-pointer flex items-center justify-between ${
                       isActive
