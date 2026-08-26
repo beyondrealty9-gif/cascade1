@@ -64,8 +64,8 @@ export default function Navbar({ onOpenEnquiryModal, onOpenBrochureModal }: Navb
       >
         <div className="relative w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between min-h-[56px] sm:min-h-[64px]">
           
-          {/* LEFT: Search Bar (Increased width horizontally to 350px on desktop) */}
-          <div className="hidden md:flex items-center relative w-72 lg:w-[350px] shrink-0 z-10">
+          {/* LEFT: Desktop-Only Search Bar (Hidden on mobile/tablet, visible on desktop) */}
+          <div className="hidden lg:flex items-center relative w-72 lg:w-[350px] shrink-0 z-10">
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 pointer-events-none" />
             <input
               type="text"
