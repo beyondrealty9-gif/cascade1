@@ -9,9 +9,19 @@ import { X, User, Phone, Mail, CheckCircle2, Sparkles, Home } from "lucide-react
 import cascadeContent from "@/content/cascade.json";
 
 const brochureModalSchema = z.object({
-  fullName: z.string().min(2, "Full name must be letters only"),
-  phone: z.string().regex(/^[0-9]{10}$/, "Please enter 10-digit mobile number"),
-  email: z.string().email("Please enter valid email address"),
+  fullName: z
+    .string()
+    .min(2, "Full Name must contain letters only (A-Z, a-z)")
+    .regex(/^[a-zA-Z\s]+$/, "Full Name must contain letters only (A-Z, a-z)"),
+  phone: z
+    .string()
+    .regex(/^[0-9]{10}$/, "Phone number must be exactly 10 digits only"),
+  email: z
+    .string()
+    .regex(
+      /^[a-zA-Z0-9._%+-]+@gmail\.com$/i,
+      "Please enter a valid Gmail address (e.g. user@gmail.com)"
+    ),
   unitInterest: z.string().min(1, "Please select configuration"),
   purchaseTimeline: z.string().min(1, "Please select timeline"),
   sendWhatsApp: z.boolean().default(true),
@@ -153,7 +163,10 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                     <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                     <input
                       {...register("fullName")}
-                      placeholder="Enter your full name"
+                      onInput={(e: React.FormEvent<HTMLInputElement>) => {
+                        e.currentTarget.value = e.currentTarget.value.replace(/[^a-zA-Z\s]/g, "");
+                      }}
+                      placeholder="Enter full name (A-Z letters only)"
                       className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#7DF9FF] focus:bg-white focus:outline-none transition-colors font-medium"
                     />
                   </div>
@@ -171,7 +184,11 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                     <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                     <input
                       {...register("phone")}
+                      onInput={(e: React.FormEvent<HTMLInputElement>) => {
+                        e.currentTarget.value = e.currentTarget.value.replace(/[^0-9]/g, "").slice(0, 10);
+                      }}
                       placeholder="Enter 10-digit mobile number"
+                      maxLength={10}
                       className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#7DF9FF] focus:bg-white focus:outline-none transition-colors font-medium"
                     />
                   </div>
@@ -183,13 +200,13 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                 {/* EMAIL ADDRESS (FOR EMAIL DELIVERY) */}
                 <div>
                   <label className="block text-[11px] font-extrabold uppercase text-slate-700 mb-1">
-                    EMAIL ADDRESS (FOR EMAIL DELIVERY) <span className="text-[#7DF9FF]">*</span>
+                    EMAIL ADDRESS (VALID GMAIL ONLY) <span className="text-[#7DF9FF]">*</span>
                   </label>
                   <div className="relative">
                     <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                     <input
                       {...register("email")}
-                      placeholder="Enter your email address"
+                      placeholder="Enter valid @gmail.com email"
                       className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#7DF9FF] focus:bg-white focus:outline-none transition-colors font-medium"
                     />
                   </div>

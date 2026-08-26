@@ -9,9 +9,19 @@ import { Send, CheckCircle2, Phone, Mail, MapPin, Sparkles } from "lucide-react"
 import cascadeContent from "@/content/cascade.json";
 
 const enquirySchema = z.object({
-  fullName: z.string().min(2, "Full name must be at least 2 characters"),
-  phone: z.string().regex(/^[0-9]{10}$/, "Please enter a valid 10-digit phone number"),
-  email: z.string().email("Please enter a valid email address"),
+  fullName: z
+    .string()
+    .min(2, "Full Name must contain letters only (A-Z, a-z)")
+    .regex(/^[a-zA-Z\s]+$/, "Full Name must contain letters only (A-Z, a-z)"),
+  phone: z
+    .string()
+    .regex(/^[0-9]{10}$/, "Phone number must be exactly 10 digits only"),
+  email: z
+    .string()
+    .regex(
+      /^[a-zA-Z0-9._%+-]+@gmail\.com$/i,
+      "Please enter a valid Gmail address (e.g. user@gmail.com)"
+    ),
   unitInterest: z.enum(["2 BHK", "3 BHK", "4 BHK", "Penthouse"]),
   preferredVisitDate: z.string().optional(),
   message: z.string().optional(),
@@ -255,11 +265,14 @@ export default function CTAContact() {
                 >
                   <div>
                     <label className="block text-xs font-extrabold uppercase text-slate-700 mb-1">
-                      Full Name *
+                      Full Name (Letters Only) *
                     </label>
                     <input
                       {...register("fullName")}
-                      placeholder="e.g. Ananya Pattnaik"
+                      onInput={(e: React.FormEvent<HTMLInputElement>) => {
+                        e.currentTarget.value = e.currentTarget.value.replace(/[^a-zA-Z\s]/g, "");
+                      }}
+                      placeholder="e.g. Ananya Pattnaik (Letters only)"
                       className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#7DF9FF] focus:bg-white focus:outline-none transition-colors"
                     />
                     {errors.fullName && (
@@ -269,11 +282,15 @@ export default function CTAContact() {
 
                   <div>
                     <label className="block text-xs font-extrabold uppercase text-slate-700 mb-1">
-                      Phone Number *
+                      Phone Number (Numbers Only) *
                     </label>
                     <input
                       {...register("phone")}
+                      onInput={(e: React.FormEvent<HTMLInputElement>) => {
+                        e.currentTarget.value = e.currentTarget.value.replace(/[^0-9]/g, "").slice(0, 10);
+                      }}
                       placeholder="10-digit mobile number"
+                      maxLength={10}
                       className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#7DF9FF] focus:bg-white focus:outline-none transition-colors"
                     />
                     {errors.phone && (
@@ -292,11 +309,11 @@ export default function CTAContact() {
                 >
                   <div>
                     <label className="block text-xs font-extrabold uppercase text-slate-700 mb-1">
-                      Email Address *
+                      Email Address (Valid Gmail Only) *
                     </label>
                     <input
                       {...register("email")}
-                      placeholder="name@example.com"
+                      placeholder="name@gmail.com"
                       className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#7DF9FF] focus:bg-white focus:outline-none transition-colors"
                     />
                     {errors.email && (

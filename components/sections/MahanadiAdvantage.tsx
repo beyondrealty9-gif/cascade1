@@ -33,7 +33,13 @@ export default function MahanadiAdvantage() {
 
   return (
     <div ref={sectionRef} className="w-full overflow-hidden bg-slate-950 relative">
-      <section className="relative py-28 overflow-hidden bg-slate-950 text-white border-b border-slate-800 flex items-center min-h-[90vh]">
+      <motion.section
+        initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, x: -120 }}
+        whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, x: 0 }}
+        viewport={{ once: false, amount: 0.15 }}
+        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+        className="relative py-28 overflow-hidden bg-slate-950 text-white border-b border-slate-800 flex items-center min-h-[90vh]"
+      >
         
         {/* ⭐⭐⭐⭐⭐ SCROLL-DRIVEN VIDEO REVEAL CONTAINER */}
         <motion.div
@@ -160,7 +166,7 @@ export default function MahanadiAdvantage() {
 
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

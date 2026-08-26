@@ -68,30 +68,33 @@ export default function BrochureModal({ isOpen, onClose }: BrochureModalProps) {
           <form onSubmit={handleDownload} className="space-y-4">
             <div>
               <label className="block text-xs font-extrabold uppercase text-slate-700 mb-1">
-                Your Email Address *
+                Your Gmail Address (Valid Gmail Only) *
               </label>
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="name@example.com"
-                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-brandRed-500 focus:bg-white focus:outline-none"
+                placeholder="name@gmail.com"
+                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#7DF9FF] focus:bg-white focus:outline-none"
               />
             </div>
 
             <div>
               <label className="block text-xs font-extrabold uppercase text-slate-700 mb-1">
-                Mobile Number *
+                Mobile Number (10 Digits Only) *
               </label>
               <input
                 type="tel"
                 required
-                pattern="[0-9]{10}"
+                maxLength={10}
                 value={phone}
+                onInput={(e: React.FormEvent<HTMLInputElement>) => {
+                  e.currentTarget.value = e.currentTarget.value.replace(/[^0-9]/g, "").slice(0, 10);
+                }}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="10-digit mobile number"
-                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-brandRed-500 focus:bg-white focus:outline-none"
+                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-sm focus:border-[#7DF9FF] focus:bg-white focus:outline-none"
               />
             </div>
 
