@@ -23,6 +23,16 @@ export default function Home() {
   const [brochureModalOpen, setBrochureModalOpen] = useState(false);
 
   useEffect(() => {
+    // Force manual scroll restoration to ALWAYS show Hero section first on load
+    if (typeof window !== "undefined") {
+      window.history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+
+      if (window.location.hash) {
+        window.history.replaceState(null, "", window.location.pathname);
+      }
+    }
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -31,6 +41,8 @@ export default function Home() {
       smoothWheel: true,
       wheelMultiplier: 1,
     });
+
+    lenis.scrollTo(0, { immediate: true });
 
     function raf(time: number) {
       lenis.raf(time);
