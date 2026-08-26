@@ -72,61 +72,57 @@ export default function MahanadiAdvantage() {
         <WaveBackground theme="dark" height={160} position="bottom" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
-            {/* Left Text Content with Staggered Reveal */}
-            <div>
-              {/* Badge */}
-              <motion.div
-                initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
-                whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.2 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#7DF9FF]/20 border border-[#7DF9FF]/40 text-[#7DF9FF] text-xs uppercase tracking-widest font-extrabold mb-4 backdrop-blur-md"
-              >
-                <Waves className="w-3.5 h-3.5 text-[#7DF9FF]" />
-                <span>Exclusive Waterfront Living</span>
-              </motion.div>
+          {/* Centered Section Header for Site-Wide Alignment */}
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <motion.div
+              initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+              whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.05 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#7DF9FF]/20 border border-[#7DF9FF]/40 text-[#7DF9FF] text-xs uppercase tracking-widest font-extrabold mb-4 backdrop-blur-md"
+            >
+              <Waves className="w-3.5 h-3.5 text-[#7DF9FF]" />
+              <span>Exclusive Waterfront Living</span>
+            </motion.div>
 
-              {/* Title */}
-              <motion.h2
-                initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 25 }}
-                whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="font-display text-3xl sm:text-5xl font-black text-white tracking-tight mb-6 leading-tight drop-shadow-lg"
-              >
-                {cascadeContent.mahanadi.heading}
-              </motion.h2>
+            <motion.h2
+              initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 25 }}
+              whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.05 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="font-display text-3xl sm:text-5xl font-black text-white tracking-tight mb-4 leading-tight drop-shadow-lg text-center"
+            >
+              {cascadeContent.mahanadi.heading}
+            </motion.h2>
 
-              {/* Subtitle */}
-              <motion.p
-                initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
-                whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                className="font-body text-slate-200 text-base sm:text-lg leading-relaxed mb-8"
-              >
-                {cascadeContent.mahanadi.subheading}
-              </motion.p>
+            <motion.p
+              initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+              whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.05 }}
+              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+              className="font-body text-slate-200 text-base sm:text-lg leading-relaxed text-center"
+            >
+              {cascadeContent.mahanadi.subheading}
+            </motion.p>
+          </div>
 
-              {/* 4 Feature Points Cascade */}
-              <div className="space-y-4">
-                {points.map((point, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, x: -30 }}
-                    whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, x: 0 }}
-                    viewport={{ once: false, amount: 0.2 }}
-                    transition={{ duration: 0.45, delay: 0.25 + idx * 0.1, ease: "easeOut" }}
-                    whileHover={prefersReducedMotion ? {} : { x: 6 }}
-                    className="flex items-start gap-3.5 p-4 rounded-xl bg-slate-950/80 border border-slate-800/90 backdrop-blur-md shadow-md hover:border-[#7DF9FF]/60 transition-colors"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-[#7DF9FF] shrink-0 mt-0.5" />
-                    <span className="text-white text-sm font-bold">{point}</span>
-                  </motion.div>
-                ))}
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            {/* 4 Feature Points Cascade */}
+            <div className="space-y-4">
+              {points.map((point, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, x: -30 }}
+                  whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.05 }}
+                  transition={{ duration: 0.45, delay: 0.25 + idx * 0.1, ease: "easeOut" }}
+                  whileHover={prefersReducedMotion ? {} : { x: 6 }}
+                  className="flex items-start gap-3.5 p-4 rounded-xl bg-slate-950/80 border border-slate-800/90 backdrop-blur-md shadow-md hover:border-[#7DF9FF]/60 transition-colors"
+                >
+                  <CheckCircle2 className="w-5 h-5 text-[#7DF9FF] shrink-0 mt-0.5" />
+                  <span className="text-white text-sm font-bold">{point}</span>
+                </motion.div>
+              ))}
             </div>
 
             {/* Right Visual Cards Grid */}

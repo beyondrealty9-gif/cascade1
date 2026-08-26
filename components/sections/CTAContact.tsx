@@ -96,44 +96,44 @@ export default function CTAContact() {
   return (
     <section id="contact" className="py-12 sm:py-20 lg:py-24 bg-slate-50 relative overflow-hidden border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* Main Section Header — Centered for Site-Wide Alignment */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <motion.div
+            initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 15, scale: 0.95 }}
+            whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.05 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-800 text-xs uppercase tracking-widest font-extrabold shadow-sm mb-4"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-[#7DF9FF] animate-spin-slow" />
+            <span>VIP Pre-Launch Enquiries</span>
+          </motion.div>
+
+          <motion.h2
+            initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+            whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.05 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="font-display text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight text-center mb-4"
+          >
+            {cascadeContent.contact.heading}
+          </motion.h2>
+
+          <motion.p
+            initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 15 }}
+            whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.05 }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+            className="font-body text-slate-600 text-base sm:text-lg leading-relaxed text-center"
+          >
+            {cascadeContent.contact.subheading}
+          </motion.p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left Column: Staggered Info & Details */}
           <div className="lg:col-span-5 space-y-6">
-            
-            {/* Step 1: Badge with Sparkle Pulse */}
-            <motion.div
-              initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 15, scale: 0.95 }}
-              whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-800 text-xs uppercase tracking-widest font-extrabold shadow-sm"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-[#7DF9FF] animate-spin-slow" />
-              <span>VIP Pre-Launch Enquiries</span>
-            </motion.div>
-
-            {/* Step 2: Heading */}
-            <motion.h2
-              initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
-              whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="font-display text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight"
-            >
-              {cascadeContent.contact.heading}
-            </motion.h2>
-
-            {/* Step 3: Subheading Paragraph */}
-            <motion.p
-              initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, y: 15 }}
-              whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-              className="font-body text-slate-600 text-base leading-relaxed"
-            >
-              {cascadeContent.contact.subheading}
-            </motion.p>
 
             {/* Step 4: Staggered Contact Details List with Magnetic Shift */}
             <div className="space-y-4 pt-2">
