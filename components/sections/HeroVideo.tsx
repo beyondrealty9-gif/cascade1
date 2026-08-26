@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import FoldText from "@/components/ui/FoldText";
 import cascadeContent from "@/content/cascade.json";
 
 interface HeroVideoProps {
@@ -77,18 +78,29 @@ export default function HeroVideo({ onOpenEnquiryModal }: HeroVideoProps) {
               </span>
             </div>
 
-            {/* Headline */}
-            <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.05]">
-              Your Next Dream <br />
-              Home Awaits <br />
-              <span className="text-slate-900">On The Mahanadi</span>
+            {/* Headline with 3D FoldText Entrance */}
+            <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05]">
+              <FoldText
+                text={"Your Next Dream\nHome Awaits\nOn The Mahanadi"}
+                splitBy="char"
+                hinge="top"
+                trigger="mount"
+                duration={0.65}
+                stagger={0.035}
+                ease="power3.out"
+                perspective={700}
+                creaseShading={0.55}
+                color="#0F172A"
+                fontWeight={900}
+                className="font-display"
+              />
             </h1>
 
             {/* Subtitle Paragraph Description */}
-            <p className="font-body text-slate-600 text-sm sm:text-base leading-relaxed max-w-lg pt-1">
+            <p className="font-body text-slate-800 text-sm sm:text-base font-semibold leading-relaxed max-w-lg pt-1 drop-shadow-sm relative z-20">
               Ultra-luxury 2, 3 & 4 BHK riverside residences at Trisulia, Cuttack
               starting at{" "}
-              <span className="font-extrabold text-slate-900">
+              <span className="font-black text-[#E05800] bg-orange-100/80 px-2 py-0.5 rounded border border-orange-200 shadow-sm inline-block">
                 {cascadeContent.project.priceStarting}
               </span>
               . 60% open green space, sky amenities, and 100% RERA approval.

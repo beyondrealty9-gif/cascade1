@@ -1,0 +1,17 @@
+.text-block-scramble {
+  max-w-4xl: 56rem;
+  font-family: var(--font-jakarta), sans-serif;
+  color: #334155;
+  user-select: text;
+}
+
+.scramble-char {
+  will-change: transform, color;
+  display: inline-block;
+  transition: color 0.15s ease;
+}
+
+.scramble-char.scrambling {
+  color: #E05800;
+  font-weight: 700;
+}

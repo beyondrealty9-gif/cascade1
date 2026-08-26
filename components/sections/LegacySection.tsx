@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Award, Building2, Users } from "lucide-react";
+import ScrambledText from "@/components/ui/ScrambledText";
 import cascadeContent from "@/content/cascade.json";
 
 function AnimatedCounter({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) {
@@ -139,11 +140,17 @@ export default function LegacySection() {
         }
       >
         <div className="max-w-7xl mx-auto">
-          {/* Top Centered Paragraph matching reference screenshot 1:1 */}
+          {/* Top Centered Paragraph with Interactive ScrambledText */}
           <div className="max-w-4xl mx-auto text-center mb-10">
-            <p className="font-body text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+            <ScrambledText
+              radius={90}
+              duration={1.2}
+              speed={0.5}
+              scrambleChars=".:!@#$%"
+              className="font-body text-slate-700 text-base sm:text-lg leading-relaxed font-normal"
+            >
               At Motwani Constructions, we believe in growing together through strong and reliable partnerships. Our trusted financial allies and engineering teams bring years of experience, credibility, and dedication, ensuring every homeowner benefits from the best opportunities in real estate. By working hand in hand with our partners, we deliver value, transparency, and success in every landmark project.
-            </p>
+            </ScrambledText>
           </div>
 
           {/* Centered Heading & Subtitle matching screenshot */}

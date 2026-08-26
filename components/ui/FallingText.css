@@ -1,0 +1,38 @@
+.falling-text-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-align: center;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+
+.falling-text-target {
+  display: inline-block;
+  font-family: var(--font-outfit), sans-serif;
+  font-weight: 800;
+}
+
+.word {
+  display: inline-block;
+  margin: 4px 8px;
+  user-select: none;
+  font-weight: 900;
+  color: #0F172A;
+  transition: color 0.3s ease;
+}
+
+.highlighted {
+  color: #E05800 !important;
+  font-weight: 900 !important;
+}
+
+.falling-text-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
