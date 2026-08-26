@@ -188,7 +188,6 @@ export default function Preloader() {
                   width={220}
                   height={56}
                   priority
-                  unoptimized
                   className="h-10 sm:h-12 w-auto object-contain"
                 />
               </div>

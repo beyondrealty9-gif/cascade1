@@ -69,6 +69,7 @@ export default function HeroVideo({ onOpenEnquiryModal }: HeroVideoProps) {
             muted
             loop
             playsInline
+            preload="metadata"
             poster="/images/swimming-pool.jpg"
             className="object-cover object-center w-full h-full"
           >

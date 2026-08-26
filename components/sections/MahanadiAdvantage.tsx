@@ -58,6 +58,7 @@ export default function MahanadiAdvantage() {
             muted
             loop
             playsInline
+            preload="none"
             poster="/images/side-elevation-twilight.jpg"
             className="w-full h-full object-cover opacity-100"
           >

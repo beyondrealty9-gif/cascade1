@@ -121,8 +121,8 @@ export default function LegacySection() {
               alt="Motwani Constructions - 25 Saal Ka Vishwas"
               width={1200}
               height={550}
-              unoptimized
               priority
+              sizes="(max-width: 768px) 100vw, 1200px"
               className="w-full h-auto object-cover max-h-[75vh]"
             />
           </div>

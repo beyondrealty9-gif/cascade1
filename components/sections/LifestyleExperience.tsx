@@ -47,6 +47,7 @@ export default function LifestyleExperience() {
           muted
           loop
           playsInline
+          preload="none"
           poster="/images/terrace-lawn.jpg"
           className="w-full h-full object-cover opacity-100"
         >

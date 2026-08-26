@@ -58,8 +58,7 @@ export default function LocationAdvantage() {
             src="/images/location-bg-oat.jpg"
             alt="Terrace OAT Area Day Render"
             fill
-            priority
-            unoptimized
+            sizes="100vw"
             className="object-cover opacity-65 brightness-95"
           />
           {/* Subtle gradient scrim overlay for 100% text contrast without heavy blur */}

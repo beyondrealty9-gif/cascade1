@@ -134,9 +134,7 @@ export default function MasterPlanning() {
                 src={activeItem.image}
                 alt={activeItem.title}
                 fill
-                priority
-                unoptimized
-                sizes="(max-width: 1200px) 100vw, 1200px"
+                sizes="(max-width: 768px) 100vw, 1200px"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent opacity-90" />
@@ -224,7 +222,6 @@ export default function MasterPlanning() {
                       src={item.image}
                       alt={item.title}
                       fill
-                      unoptimized
                       sizes="180px"
                       className="object-cover"
                     />
