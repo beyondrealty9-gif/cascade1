@@ -144,8 +144,8 @@ export default function LegacySection() {
         }
         className={
           enablePinCover
-            ? "relative z-[2] bg-white border-t border-slate-200 shadow-2xl py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
-            : "w-full bg-white relative z-[2] px-4 sm:px-6 lg:px-8 py-8 sm:py-16 overflow-hidden"
+            ? "relative z-[2] bg-white border-t border-slate-200 shadow-2xl py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8"
+            : "w-full bg-white relative z-[2] px-4 sm:px-6 lg:px-8 py-8 sm:py-16"
         }
       >
         {/* Real 3D Shallow Water Physics Ripple Engine & Wave Background */}
