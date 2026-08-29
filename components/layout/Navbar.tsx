@@ -58,11 +58,11 @@ export default function Navbar({ onOpenEnquiryModal, onOpenBrochureModal }: Navb
       <div
         className={`bg-white transition-all duration-300 ${
           isScrolled
-            ? "shadow-md py-2 border-b border-slate-200"
-            : "py-2.5 border-b border-slate-200/80"
+            ? "shadow-md py-1 border-b border-slate-200"
+            : "py-1.5 border-b border-slate-200/80"
         }`}
       >
-        <div className="relative w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between min-h-[56px] sm:min-h-[64px]">
+        <div className="relative w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between min-h-[52px] sm:min-h-[60px]">
           
           {/* LEFT: Search Bar (Visible on desktop & laptop 768px+, hidden on mobile phones) */}
           <div className="hidden md:flex items-center relative w-72 lg:w-[350px] shrink-0 z-10">
@@ -89,14 +89,14 @@ export default function Navbar({ onOpenEnquiryModal, onOpenBrochureModal }: Navb
             href="#hero"
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex items-center shrink-0"
           >
-            <div className="relative h-12 sm:h-14 w-auto min-w-[180px] sm:min-w-[220px] flex items-center justify-center">
+            <div className="relative h-14 sm:h-16 w-auto min-w-[210px] sm:min-w-[260px] flex items-center justify-center">
               <Image
                 src="/images/logo.png"
                 alt="Motwani Constructions - Cascade"
-                width={220}
-                height={56}
+                width={260}
+                height={66}
                 priority
-                className="object-contain h-12 sm:h-14 w-auto max-h-14"
+                className="object-contain h-14 sm:h-16 w-auto max-h-16"
               />
             </div>
           </a>
