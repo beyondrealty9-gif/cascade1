@@ -62,26 +62,35 @@ export default function HeroVideo({ onOpenEnquiryModal }: HeroVideoProps) {
         }}
         className="relative w-full min-h-[100dvh] overflow-hidden flex items-center justify-start bg-slate-100 py-12 sm:py-0"
       >
-        {/* Background Drone Video */}
+        {/* Background: static image on mobile, video on desktop — saves 14MB video download on mobile */}
         <div className="absolute inset-0 w-full h-full">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster="/images/swimming-pool.jpg"
-            className="object-cover object-center w-full h-full"
-          >
-            <source src="/videos/drone-hero-valley.mp4" type="video/mp4" />
-          </video>
+          {isMobile ? (
+            <img
+              src="/images/swimming-pool.jpg"
+              alt="Cascade by Motwani — Riverside Luxury Homes"
+              className="object-cover object-center w-full h-full"
+              fetchPriority="high"
+            />
+          ) : (
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/images/swimming-pool.jpg"
+              className="object-cover object-center w-full h-full"
+            >
+              <source src="/videos/drone-hero-valley.mp4" type="video/mp4" />
+            </video>
+          )}
           {/* Light gradient scrim for text contrast — desktop view 100% unchanged */}
           <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent lg:w-3/5 lg:from-white lg:via-white/85" />
           <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-transparent lg:hidden" />
         </div>
 
-        {/* 3D Water band — bottom third, available on both mobile and desktop */}
-        {!prefersReducedMotion && (
+        {/* 3D Water band — desktop only (Three.js is too heavy for mobile GPU/parse budget) */}
+        {!prefersReducedMotion && !isMobile && (
           <div className="absolute bottom-0 left-0 right-0 h-[38%] opacity-80 pointer-events-none z-[1]">
             <RealisticWater3D />
           </div>

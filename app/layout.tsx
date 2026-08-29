@@ -27,6 +27,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable} ${jakarta.variable} scroll-smooth dark`}>
       <head>
+        {/* Preconnect to Google Fonts CDN for faster font loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Preload hero poster — this IS the LCP element on mobile */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/swimming-pool.jpg"
+          fetchPriority="high"
+        />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
@@ -37,4 +49,5 @@ export default function RootLayout({
       </body>
     </html>
   );
+
 }

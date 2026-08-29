@@ -1,22 +1,28 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import Lenis from "lenis";
 import Navbar from "@/components/layout/Navbar";
 import HeroVideo from "@/components/sections/HeroVideo";
-import LegacySection from "@/components/sections/LegacySection";
-import LocationAdvantage from "@/components/sections/LocationAdvantage";
-import MahanadiAdvantage from "@/components/sections/MahanadiAdvantage";
-import ProjectSnapshot from "@/components/sections/ProjectSnapshot";
-import ConnectivityMap from "@/components/sections/ConnectivityMap";
-import MasterPlanning from "@/components/sections/MasterPlanning";
-import Amenities from "@/components/sections/Amenities";
-import LifestyleExperience from "@/components/sections/LifestyleExperience";
-import CTAContact from "@/components/sections/CTAContact";
-import Footer from "@/components/layout/Footer";
-import BrochureModal from "@/components/ui/BrochureModal";
-import EnquiryModal from "@/components/ui/EnquiryModal";
 import BackToTop from "@/components/ui/BackToTop";
+import EnquiryModal from "@/components/ui/EnquiryModal";
+import BrochureModal from "@/components/ui/BrochureModal";
+
+// ─── Code-split every below-the-fold section into its own JS chunk ─────────
+// dynamic() without ssr:false is required when used inside a "use client" page.
+// Next.js still splits each section into a separate chunk — they are fetched
+// after the page shell renders, cutting the initial bundle size significantly.
+const LegacySection       = dynamic(() => import("@/components/sections/LegacySection"));
+const LocationAdvantage   = dynamic(() => import("@/components/sections/LocationAdvantage"));
+const MahanadiAdvantage   = dynamic(() => import("@/components/sections/MahanadiAdvantage"));
+const ProjectSnapshot     = dynamic(() => import("@/components/sections/ProjectSnapshot"));
+const ConnectivityMap     = dynamic(() => import("@/components/sections/ConnectivityMap"));
+const MasterPlanning      = dynamic(() => import("@/components/sections/MasterPlanning"));
+const Amenities           = dynamic(() => import("@/components/sections/Amenities"));
+const LifestyleExperience = dynamic(() => import("@/components/sections/LifestyleExperience"));
+const CTAContact          = dynamic(() => import("@/components/sections/CTAContact"));
+const Footer              = dynamic(() => import("@/components/layout/Footer"));
 
 export default function Home() {
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);

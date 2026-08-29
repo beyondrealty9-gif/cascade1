@@ -8,15 +8,35 @@ import WaveBackground from "@/components/effects/WaveBackground";
 
 export default function MahanadiAdvantage() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const points = cascadeContent.mahanadi.points;
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       setPrefersReducedMotion(
         window.matchMedia("(prefers-reduced-motion: reduce)").matches
       );
+      setIsMobile(window.matchMedia("(max-width: 768px)").matches);
     }
+  }, []);
+
+  // Play video only when section enters viewport — avoids 7MB fetch on page load
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
   }, []);
 
   // ⭐⭐⭐⭐⭐ Scroll-Driven Video Reveal: video progress follows scroll position 1:1
@@ -54,7 +74,7 @@ export default function MahanadiAdvantage() {
           className="absolute inset-0 w-full h-full overflow-hidden shadow-2xl transition-all"
         >
           <video
-            autoPlay
+            ref={videoRef}
             muted
             loop
             playsInline

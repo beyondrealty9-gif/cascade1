@@ -11,8 +11,8 @@ const PreloaderWater = dynamic(
   { ssr: false }
 );
 
-const DISPLAY_DURATION = 5000;
-const REDUCED_MOTION_DURATION = 2000;
+const DISPLAY_DURATION = 2500;
+const REDUCED_MOTION_DURATION = 1200;
 
 // Floating particle specs (purely decorative)
 const PARTICLES = Array.from({ length: 18 }, (_, i) => ({

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Heart, Sun, Wind, Eye, Compass } from "lucide-react";
 import cascadeContent from "@/content/cascade.json";
@@ -8,6 +8,7 @@ import cascadeContent from "@/content/cascade.json";
 export default function LifestyleExperience() {
   const features = cascadeContent.lifestyle.features || cascadeContent.lifestyle.points || [];
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -15,6 +16,23 @@ export default function LifestyleExperience() {
         window.matchMedia("(prefers-reduced-motion: reduce)").matches
       );
     }
+  }, []);
+
+  // Play video only when section enters viewport — avoids 21MB fetch on page load
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
   }, []);
 
   const featureIcons = [
@@ -43,7 +61,7 @@ export default function LifestyleExperience() {
         className="absolute inset-0 w-full h-full overflow-hidden shadow-2xl"
       >
         <video
-          autoPlay
+          ref={videoRef}
           muted
           loop
           playsInline
