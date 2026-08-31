@@ -8,6 +8,7 @@ import HeroVideo from "@/components/sections/HeroVideo";
 import BackToTop from "@/components/ui/BackToTop";
 import EnquiryModal from "@/components/ui/EnquiryModal";
 import BrochureModal from "@/components/ui/BrochureModal";
+import BackgroundMusic from "@/components/ui/BackgroundMusic";
 
 // ─── Code-split every below-the-fold section into its own JS chunk ─────────
 // dynamic() without ssr:false is required when used inside a "use client" page.
@@ -92,6 +93,8 @@ export default function Home() {
       <Footer />
 
       <BackToTop />
+
+      <BackgroundMusic />
 
       <EnquiryModal
         isOpen={enquiryModalOpen}
