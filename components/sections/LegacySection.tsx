@@ -72,7 +72,7 @@ function VideoReveal() {
     <div ref={ref} className="w-full h-full flex items-center justify-center">
       <motion.div
         style={{ scale, borderRadius, opacity }}
-        className="relative w-full h-[80vh] sm:h-[85vh] overflow-hidden bg-black shadow-2xl"
+        className="relative w-full h-[55vh] sm:h-[75vh] lg:h-[85vh] overflow-hidden bg-black shadow-2xl"
       >
         <video
           autoPlay
