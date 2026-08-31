@@ -9,6 +9,7 @@ import BackToTop from "@/components/ui/BackToTop";
 import EnquiryModal from "@/components/ui/EnquiryModal";
 import BrochureModal from "@/components/ui/BrochureModal";
 import BackgroundMusic from "@/components/ui/BackgroundMusic";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
 // ─── Code-split every below-the-fold section into its own JS chunk ─────────
 // dynamic() without ssr:false is required when used inside a "use client" page.
@@ -95,6 +96,8 @@ export default function Home() {
       <BackToTop />
 
       <BackgroundMusic />
+
+      <WhatsAppButton />
 
       <EnquiryModal
         isOpen={enquiryModalOpen}
