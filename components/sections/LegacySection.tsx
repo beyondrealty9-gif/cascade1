@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import Image from "next/image";
+
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Award, Building2, Users } from "lucide-react";
 import ScrambledText from "@/components/ui/ScrambledText";
@@ -115,17 +115,133 @@ export default function LegacySection() {
         }
       >
         <div className="max-w-7xl mx-auto w-full">
-          <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-950 group">
-            <Image
-              src="/images/motwani-heritage-banner.png"
-              alt="Motwani Constructions - 25 Saal Ka Vishwas"
-              width={1200}
-              height={550}
-              priority
-              sizes="(max-width: 768px) 100vw, 1200px"
-              className="w-full h-auto object-cover max-h-[75vh]"
+          {/* ── Cinematic Video Reveal Card ───────────────────────── */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97, y: 32 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="relative w-full rounded-3xl overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.7)] border border-white/10 bg-black"
+            style={{ aspectRatio: "16/7" }}
+          >
+            {/* ── Video layer ── */}
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+              poster="/images/motwani-heritage-banner.png"
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/videos/riverside-heritage.mp4" type="video/mp4" />
+            </video>
+
+            {/* ── Multi-directional dark vignette ── */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/30 to-black/60 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/50 pointer-events-none" />
+
+            {/* ── Film-grain texture overlay ── */}
+            <div
+              className="absolute inset-0 opacity-[0.06] pointer-events-none mix-blend-overlay"
+              style={{
+                backgroundImage:
+                  "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E\")",
+                backgroundSize: "180px",
+              }}
             />
-          </div>
+
+            {/* ── TOP-LEFT: Brand Heritage Badge ── */}
+            <div className="absolute top-4 left-5 sm:top-6 sm:left-8 flex items-center gap-2 z-10">
+              <div className="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 backdrop-blur-sm">
+                <span className="text-amber-300 text-[10px] sm:text-xs font-black uppercase tracking-[0.2em]">
+                  Since 1999 · Odisha&apos;s Most Trusted
+                </span>
+              </div>
+            </div>
+
+            {/* ── TOP-RIGHT: RERA Badge ── */}
+            <div className="absolute top-4 right-5 sm:top-6 sm:right-8 z-10">
+              <div className="px-3 py-1.5 rounded-xl bg-white/10 border border-white/20 backdrop-blur-md text-right">
+                <p className="text-white/50 text-[9px] uppercase tracking-widest">RERA Approved</p>
+                <p className="text-white text-[11px] sm:text-xs font-black tracking-wide">RP/19/2024/CASCADE</p>
+              </div>
+            </div>
+
+            {/* ── CENTER-LEFT: Hero Title Block ── */}
+            <div className="absolute inset-0 flex flex-col justify-center px-5 sm:px-8 lg:px-14 z-10 max-w-full sm:max-w-[65%]">
+              {/* Eyebrow */}
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="text-amber-400 text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] mb-2 sm:mb-3"
+              >
+                Motwani Constructions
+              </motion.p>
+
+              {/* Main Title */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.45, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <h2
+                  className="font-display font-black leading-none tracking-tight text-white mb-1 sm:mb-2"
+                  style={{ fontSize: "clamp(2rem, 6vw, 5rem)" }}
+                >
+                  <span className="text-amber-400">25</span> Saal
+                </h2>
+                <h2
+                  className="font-display font-black leading-none tracking-tight text-white"
+                  style={{ fontSize: "clamp(2rem, 6vw, 5rem)" }}
+                >
+                  <span className="italic text-white/70">ka</span>{" "}
+                  <span className="text-white">Vishwas</span>
+                </h2>
+              </motion.div>
+
+              {/* Divider line */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.7, duration: 0.6 }}
+                className="mt-3 sm:mt-5 h-[2px] w-16 sm:w-24 bg-gradient-to-r from-amber-400 to-amber-400/0 origin-left"
+              />
+
+              {/* ── Animated Stats Row ── */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.85, duration: 0.7 }}
+                className="mt-4 sm:mt-6 grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-3 sm:gap-x-6"
+              >
+                {[
+                  { num: 4500,  suf: "+", label: "Homes" },
+                  { num: 48,    suf: "+", label: "Projects" },
+                  { num: 27000, suf: "+", label: "Lives Touched" },
+                  { num: 55,    suf: " L", label: "Sq.ft Completed" },
+                ].map((s, i) => (
+                  <div key={i} className="flex flex-col">
+                    <span className="font-display font-black text-white text-xl sm:text-2xl lg:text-3xl leading-none">
+                      <AnimatedCounter end={s.num} suffix={s.suf} duration={2200} />
+                    </span>
+                    <span className="text-white/50 text-[9px] sm:text-[10px] uppercase tracking-widest font-semibold mt-0.5">
+                      {s.label}
+                    </span>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* ── BOTTOM: Cinematic letterbox bars ── */}
+            <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-amber-400/0 via-amber-400/60 to-amber-400/0 pointer-events-none" />
+            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-white/0 via-white/20 to-white/0 pointer-events-none" />
+          </motion.div>
         </div>
       </div>
 
