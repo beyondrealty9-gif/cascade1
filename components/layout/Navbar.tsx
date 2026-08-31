@@ -58,11 +58,11 @@ export default function Navbar({ onOpenEnquiryModal, onOpenBrochureModal }: Navb
       <div
         className={`bg-white transition-all duration-300 ${
           isScrolled
-            ? "shadow-md py-1 border-b border-slate-200"
-            : "py-1.5 border-b border-slate-200/80"
+            ? "shadow-md py-2 border-b border-slate-200"
+            : "py-3 border-b border-slate-200/80"
         }`}
       >
-        <div className="relative w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between min-h-[52px] sm:min-h-[60px]">
+        <div className="relative w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between min-h-[68px] sm:min-h-[80px]">
           
           {/* LEFT: Search Bar (Visible on desktop & laptop 768px+, hidden on mobile phones) */}
           <div className="hidden md:flex items-center relative w-72 lg:w-[350px] shrink-0 z-10">
@@ -84,19 +84,19 @@ export default function Navbar({ onOpenEnquiryModal, onOpenBrochureModal }: Navb
             )}
           </div>
 
-          {/* EXACT VIEWPORT CENTER: Motwani Logo */}
+          {/* EXACT VIEWPORT CENTER: Motwani Logo — allowed to breathe slightly beyond bar */}
           <a
             href="#hero"
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex items-center shrink-0"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex items-center shrink-0 overflow-visible"
           >
-            <div className="relative h-14 sm:h-16 w-auto min-w-[210px] sm:min-w-[260px] flex items-center justify-center">
+            <div className="relative h-[72px] sm:h-[84px] w-auto min-w-[240px] sm:min-w-[300px] flex items-center justify-center overflow-visible">
               <Image
                 src="/images/logo.png"
                 alt="Motwani Constructions - Cascade"
-                width={260}
-                height={66}
+                width={320}
+                height={82}
                 priority
-                className="object-contain h-14 sm:h-16 w-auto max-h-16"
+                className="object-contain h-[72px] sm:h-[84px] w-auto"
               />
             </div>
           </a>
