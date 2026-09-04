@@ -50,10 +50,10 @@ export default function ProjectSnapshot() {
   }, []);
 
   const icons = [
-    <Home className="w-6 h-6 text-[#7DF9FF]" key="0" />,
-    <Compass className="w-6 h-6 text-[#7DF9FF]" key="1" />,
-    <Sparkles className="w-6 h-6 text-amber-500" key="2" />,
-    <Building2 className="w-6 h-6 text-[#7DF9FF]" key="3" />,
+    <Home className="w-6 h-6 text-[#002B49] group-hover:text-white transition-colors" key="0" />,
+    <Compass className="w-6 h-6 text-[#002B49] group-hover:text-white transition-colors" key="1" />,
+    <Sparkles className="w-6 h-6 text-[#002B49] group-hover:text-white transition-colors" key="2" />,
+    <Building2 className="w-6 h-6 text-[#002B49] group-hover:text-white transition-colors" key="3" />,
   ];
 
   // Grid Stagger Container Variants with staggerChildren: 0.12
@@ -98,7 +98,7 @@ export default function ProjectSnapshot() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-800 text-xs uppercase tracking-widest font-extrabold mb-4 shadow-sm"
           >
-            <Tag className="w-3.5 h-3.5 text-[#7DF9FF]" />
+            <Tag className="w-3.5 h-3.5 text-[#002B49]" />
             <span>PROJECT SNAPSHOT</span>
           </motion.div>
 
@@ -135,12 +135,12 @@ export default function ProjectSnapshot() {
                 }
                 className={`p-8 rounded-2xl bg-white transition-all duration-300 group cursor-pointer ${
                   isHighlighted
-                    ? "border-2 border-[#7DF9FF] shadow-lg shadow-[#7DF9FF]/20 animate-pulse-glow-border"
-                    : "border border-slate-200 shadow-sm hover:border-[#7DF9FF]/60 hover:shadow-xl"
+                    ? "border-2 border-[#002B49] shadow-lg shadow-[#002B49]/15"
+                    : "border border-slate-200 shadow-sm hover:border-[#002B49]/40 hover:shadow-xl"
                 }`}
               >
                 {/* Pop Icon */}
-                <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+                <div className="w-12 h-12 rounded-xl bg-blue-50/80 border border-blue-100 flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#002B49] group-hover:border-[#002B49]">
                   <div className="transform group-hover:scale-108 transition-transform duration-300">
                     {icons[idx]}
                   </div>
@@ -151,7 +151,7 @@ export default function ProjectSnapshot() {
                 </div>
 
                 {/* Value text with Count-Up animation for numeric stats */}
-                <div className="font-display text-2xl sm:text-3xl font-black text-slate-900 mb-2 group-hover:text-[#7DF9FF] transition-colors">
+                <div className="font-display text-2xl sm:text-3xl font-black text-slate-900 mb-2 group-hover:text-[#002B49] transition-colors">
                   {idx === 1 ? (
                     <>
                       <AnimatedCountUp
