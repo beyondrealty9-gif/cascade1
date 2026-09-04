@@ -40,8 +40,6 @@ export default function Navbar({ onOpenEnquiryModal, onOpenBrochureModal }: Navb
             <span className="text-slate-600">—</span>
             <span className="text-amber-400 font-bold">Starting at {cascadeContent.project.priceStarting}</span>
             <span className="text-slate-600">—</span>
-            <span>100% RERA Approved ({cascadeContent.project.reraNo})</span>
-            <span className="text-slate-600">—</span>
             <span>Motwani Constructions Heritage</span>
           </div>
 

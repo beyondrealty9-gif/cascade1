@@ -29,7 +29,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-2 text-xs text-[#7DF9FF] font-bold">
               <ShieldCheck className="w-4 h-4 shrink-0 text-[#7DF9FF]" />
-              <span>Odisha RERA Registered Project: {cascadeContent.project.reraNo}</span>
+              <span>Premium Riverside Residential Community</span>
             </div>
           </div>
 
@@ -78,11 +78,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* RERA & Legal Disclaimer */}
+        {/* Legal Disclaimer */}
         <div className="pt-8 text-[11px] text-slate-400 leading-relaxed space-y-3">
-          <p>
-            <strong className="text-slate-300">RERA Disclaimer:</strong> Codename Cascade is registered under Odisha Real Estate Regulatory Authority (ORERA) bearing registration number {cascadeContent.project.reraNo}. All details can be verified on the official ORERA portal.
-          </p>
           <p>
             <strong className="text-slate-300">Legal Disclaimer & Brokerage Note:</strong> The information provided on this website is for guidance only. Architectural renderings, elevation views, interior visual representations, computer-generated images, and stock videos are artistic impressions and conceptual representations. Actual product layout, colors, and specifications may vary. Price starting ₹69 Lakhs* excludes government taxes, stamp duty, registration charges, and statutory fees.
           </p>
@@ -91,7 +88,7 @@ export default function Footer() {
             <div className="flex gap-4 mt-2 sm:mt-0">
               <a href="#" className="hover:text-white">Privacy Policy</a>
               <a href="#" className="hover:text-white">Terms of Service</a>
-              <a href="#" className="hover:text-white">RERA Certificate</a>
+              <a href="#masterplan" className="hover:text-white">Master Plan</a>
             </div>
           </div>
         </div>

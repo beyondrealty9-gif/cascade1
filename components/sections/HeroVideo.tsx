@@ -141,7 +141,7 @@ export default function HeroVideo({ onOpenEnquiryModal }: HeroVideoProps) {
               </div>
 
               <p className="text-slate-700 text-xs sm:text-sm font-semibold leading-relaxed">
-                60% open green space, sky amenities, and 100% RERA approval.
+                60% open green space and sky amenities.
               </p>
             </div>
 

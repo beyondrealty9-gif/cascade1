@@ -127,7 +127,7 @@ export default function LegacySection() {
     { name: "SBI HOME LOANS", tag: "State Bank of India" },
     { name: "ICICI BANK", tag: "Preferred Lender" },
     { name: "AXIS BANK", tag: "Financial Ally" },
-    { name: "ORERA ODISHA", tag: "Reg: RP/19/2024" },
+    { name: "PNB HOUSING", tag: "Financial Partner" },
     { name: "CREDAI ODISHA", tag: "Member Developer" },
   ];
 
