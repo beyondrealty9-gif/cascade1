@@ -168,7 +168,7 @@ export default function HeroVideo({ onOpenEnquiryModal }: HeroVideoProps) {
             <div className="pt-6 border-t border-slate-300/70 grid grid-cols-3 gap-4 max-w-md text-slate-900">
               <div>
                 <div className="font-display text-2xl sm:text-3xl font-black">
-                  28+
+                  25+
                 </div>
                 <div className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider">
                   Years Heritage
