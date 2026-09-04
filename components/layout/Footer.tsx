@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MapPin, Phone, Mail, ShieldCheck, Award } from "lucide-react";
+import { MapPin, Phone, ShieldCheck, Award } from "lucide-react";
 import cascadeContent from "@/content/cascade.json";
 
 export default function Footer() {
@@ -58,10 +58,6 @@ export default function Footer() {
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#7DF9FF] shrink-0" />
                 <a href={`tel:${cascadeContent.project.phone}`} className="hover:text-[#7DF9FF]">{cascadeContent.project.phone}</a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[#7DF9FF] shrink-0" />
-                <a href={`mailto:${cascadeContent.project.email}`} className="hover:text-[#7DF9FF]">{cascadeContent.project.email}</a>
               </div>
             </div>
 

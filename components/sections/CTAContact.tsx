@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion } from "framer-motion";
-import { Send, CheckCircle2, Phone, Mail, MapPin, Sparkles } from "lucide-react";
+import { Send, CheckCircle2, Phone, MapPin, Sparkles } from "lucide-react";
 import cascadeContent from "@/content/cascade.json";
 
 const enquirySchema = z.object({
@@ -156,24 +156,7 @@ export default function CTAContact() {
                 </div>
               </motion.div>
 
-              <motion.div
-                initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, x: -20 }}
-                whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, x: 0 }}
-                viewport={{ once: false, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: 0.35 }}
-                whileHover={prefersReducedMotion ? {} : { x: 6 }}
-                className="flex items-start gap-4 p-3 rounded-2xl hover:bg-white hover:shadow-md transition-all cursor-pointer group"
-              >
-                <div className="w-11 h-11 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-river-600 shrink-0 group-hover:bg-river-600 group-hover:text-white transition-colors">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs uppercase tracking-wider font-extrabold text-slate-400">Email Enquiries</div>
-                  <a href={`mailto:${cascadeContent.project.email}`} className="font-display text-base font-black text-slate-900 group-hover:text-river-600 transition-colors">
-                    {cascadeContent.project.email}
-                  </a>
-                </div>
-              </motion.div>
+
 
               <motion.div
                 initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, x: -20 }}
