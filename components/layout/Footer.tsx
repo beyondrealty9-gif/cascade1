@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MapPin, Phone, ShieldCheck, Award } from "lucide-react";
+import { MapPin, Phone, Award } from "lucide-react";
 import cascadeContent from "@/content/cascade.json";
 
 export default function Footer() {
@@ -27,10 +27,6 @@ export default function Footer() {
               {cascadeContent.project.subtitle}. Designed for discerning families seeking an elevated lifestyle on the banks of the Mahanadi River.
             </p>
 
-            <div className="flex items-center gap-2 text-xs text-[#7DF9FF] font-bold">
-              <ShieldCheck className="w-4 h-4 shrink-0 text-[#7DF9FF]" />
-              <span>Premium Riverside Residential Community</span>
-            </div>
           </div>
 
           {/* Quick Links */}
