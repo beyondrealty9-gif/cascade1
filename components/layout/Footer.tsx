@@ -62,7 +62,7 @@ export default function Footer() {
         {/* Legal Disclaimer */}
         <div className="pt-8 text-[11px] text-slate-400 leading-relaxed space-y-3">
           <p>
-            <strong className="text-slate-300">Legal Disclaimer & Brokerage Note:</strong> The information provided on this website is for guidance only. Architectural renderings, elevation views, interior visual representations, computer-generated images, and stock videos are artistic impressions and conceptual representations. Actual product layout, colors, and specifications may vary. Price starting ₹69 Lakhs* excludes government taxes, stamp duty, registration charges, and statutory fees.
+            <strong className="text-slate-300">Legal Disclaimer:</strong> The information provided on this website is for guidance only. Architectural renderings, elevation views, interior visual representations, computer-generated images, and stock videos are artistic impressions and conceptual representations. Actual product layout, colors, and specifications may vary. Price starting ₹69 Lakhs* excludes government taxes, stamp duty, registration charges, and statutory fees.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-between pt-4 border-t border-slate-800 text-xs text-slate-400">
             <div>© {new Date().getFullYear()} {cascadeContent.project.developer}. All Rights Reserved.</div>
