@@ -134,10 +134,11 @@ export default function MasterPlanning() {
                 src={activeItem.image}
                 alt={activeItem.title}
                 fill
+                unoptimized
                 sizes="(max-width: 768px) 100vw, 1200px"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent pointer-events-none opacity-70" />
 
               {/* Active Badge */}
               <div className="absolute top-6 left-6 font-display font-black text-xs text-slate-950 bg-[#7DF9FF] border border-white/20 px-3.5 py-1.5 rounded-full shadow-xl backdrop-blur-md">
@@ -222,6 +223,7 @@ export default function MasterPlanning() {
                       src={item.image}
                       alt={item.title}
                       fill
+                      unoptimized
                       sizes="180px"
                       className="object-cover"
                     />

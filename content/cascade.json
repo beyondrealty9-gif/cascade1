@@ -184,79 +184,79 @@
       {
         "title": "Terrace Twilight Lawn",
         "category": "Outdoor Deck",
-        "image": "/images/terrace-lawn.jpg",
+        "image": "/images/terrace-lawn.webp",
         "desc": "Twilight party lawn with ambient lighting overlooking the river."
       },
       {
         "title": "Open Air Amphitheatre (OAT)",
         "category": "Community Deck",
-        "image": "/images/terrace-oat.jpg",
+        "image": "/images/terrace-oat.webp",
         "desc": "Elevated seating deck for sunset performances and social gatherings."
       },
       {
         "title": "Rooftop Badminton Court",
         "category": "Sports",
-        "image": "/images/terrace-badminton.jpg",
+        "image": "/images/terrace-badminton.webp",
         "desc": "Professional twilight badminton court with panoramic city views."
       },
       {
         "title": "Rooftop Chess Plaza",
         "category": "Leisure",
-        "image": "/images/terrace-chess.jpg",
+        "image": "/images/terrace-chess.webp",
         "desc": "Giant life-sized chess court on the executive terrace."
       },
       {
         "title": "Terrace Party Deck",
         "category": "Recreation",
-        "image": "/images/terrace-party-lawn.jpg",
+        "image": "/images/terrace-party-lawn.webp",
         "desc": "Exclusive celebration zone for resident private functions."
       },
       {
         "title": "Infinity Swimming Pool",
         "category": "Wellness",
-        "image": "/images/swimming-pool.jpg",
+        "image": "/images/swimming-pool.webp",
         "desc": "Twilight swimming pool with calm waters & sun loungers."
       },
       {
         "title": "State-of-the-Art Gym",
         "category": "Fitness",
-        "image": "/images/gym.jpg",
+        "image": "/images/gym.webp",
         "desc": "Fully equipped modern fitness center with cardio & strength stations."
       },
       {
         "title": "Indoor Games Arcade",
         "category": "Family",
-        "image": "/images/indoor-games.jpg",
+        "image": "/images/indoor-games.webp",
         "desc": "Table tennis, billiards, and board games lounge."
       },
       {
         "title": "Executive Library Lounge",
         "category": "Quiet Zone",
-        "image": "/images/library.jpg",
+        "image": "/images/library.webp",
         "desc": "Serene reading room & co-working sanctuary."
       },
       {
         "title": "Grand Community Hall",
         "category": "Events",
-        "image": "/images/community-hall.jpg",
+        "image": "/images/community-hall.webp",
         "desc": "Double-height banquet hall for grand family celebrations."
       },
       {
         "title": "Riverside Tower Elevation",
         "category": "Architecture",
-        "image": "/images/side-elevation-twilight.jpg",
+        "image": "/images/side-elevation-twilight.webp",
         "desc": "Iconic high-rise twilight architectural silhouette on the Mahanadi."
       },
       {
         "title": "Grand Entrance Plaza",
         "category": "Landmark",
-        "image": "/images/road-elevation-dusk.jpg",
+        "image": "/images/road-elevation-dusk.webp",
         "desc": "Gated grand entryway with water cascade features & 24/7 security."
       },
       {
         "title": "Fresh Air Outdoor Gym Deck",
         "category": "Health",
-        "image": "/images/terrace-outer-gym.jpg",
+        "image": "/images/terrace-outer-gym.webp",
         "desc": "Elevated outdoor calisthenics deck amidst natural river breezes."
       }
     ]
