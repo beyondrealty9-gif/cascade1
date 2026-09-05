@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MapPin, Phone, Award } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 import cascadeContent from "@/content/cascade.json";
 
 export default function Footer() {
@@ -55,17 +55,6 @@ export default function Footer() {
                 <Phone className="w-4 h-4 text-[#7DF9FF] shrink-0" />
                 <a href={`tel:${cascadeContent.project.phone}`} className="hover:text-[#7DF9FF]">{cascadeContent.project.phone}</a>
               </div>
-            </div>
-
-            {/* 3% Brokerage & Booking Note Callout Box */}
-            <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-xs leading-relaxed space-y-2">
-              <div className="flex items-center gap-2 text-[#7DF9FF] font-extrabold uppercase tracking-wider text-xs">
-                <Award className="w-4 h-4 shrink-0 text-[#7DF9FF]" />
-                <span>{cascadeContent.legalNotes.brokerageHeader}</span>
-              </div>
-              <p className="text-slate-300 font-medium whitespace-pre-line text-[11px] leading-normal">
-                {cascadeContent.legalNotes.disclaimer}
-              </p>
             </div>
           </div>
         </div>
