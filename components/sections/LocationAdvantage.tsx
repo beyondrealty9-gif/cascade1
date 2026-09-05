@@ -20,9 +20,9 @@ export default function LocationAdvantage() {
   }, []);
 
   const icons = [
-    <Navigation className="w-5 h-5 text-[#7DF9FF]" key="0" />,
-    <TrendingUp className="w-5 h-5 text-[#7DF9FF]" key="1" />,
-    <Trees className="w-5 h-5 text-emerald-600" key="2" />,
+    <Navigation className="w-5 h-5 text-[#002B49] group-hover:text-white transition-colors" key="0" />,
+    <TrendingUp className="w-5 h-5 text-[#002B49] group-hover:text-white transition-colors" key="1" />,
+    <Trees className="w-5 h-5 text-[#002B49] group-hover:text-white transition-colors" key="2" />,
   ];
 
   return (
@@ -81,7 +81,7 @@ export default function LocationAdvantage() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-white text-slate-900 text-xs uppercase tracking-widest font-extrabold mb-4 shadow-lg backdrop-blur-md"
             >
-              <MapPin className="w-3.5 h-3.5 text-[#7DF9FF]" />
+              <MapPin className="w-3.5 h-3.5 text-[#002B49]" />
               <span>PRIME STRATEGIC HUB</span>
             </motion.div>
 
@@ -127,8 +127,8 @@ export default function LocationAdvantage() {
                   }
                   className={`p-8 rounded-2xl bg-white/95 border backdrop-blur-md transition-all duration-300 group cursor-pointer text-slate-900 ${
                     isHighlighted
-                      ? "border-2 border-[#7DF9FF] shadow-2xl shadow-[#7DF9FF]/30"
-                      : "border-white shadow-xl hover:border-[#7DF9FF]/80 hover:shadow-2xl"
+                      ? "border-2 border-[#002B49] shadow-2xl shadow-[#002B49]/15"
+                      : "border-white shadow-xl hover:border-[#002B49]/40 hover:shadow-2xl"
                   }`}
                 >
                   <div className="flex items-center justify-between mb-6">
@@ -138,19 +138,19 @@ export default function LocationAdvantage() {
                       whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, scale: 1 }}
                       viewport={{ once: false, amount: 0.2 }}
                       transition={{ type: "spring", stiffness: 300, damping: 15, delay: 0.35 + idx * 0.12 }}
-                      className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:bg-[#7DF9FF]/20 transition-colors"
+                      className="w-12 h-12 rounded-xl bg-blue-50/80 border border-blue-100 flex items-center justify-center group-hover:bg-[#002B49] group-hover:border-[#002B49] transition-all duration-300"
                     >
                       <div className="transform group-hover:scale-108 transition-transform duration-300">
                         {icons[idx]}
                       </div>
                     </motion.div>
 
-                    <span className="text-[11px] uppercase font-black tracking-wider px-3 py-1 rounded-full bg-[#7DF9FF]/20 text-slate-950 border border-[#7DF9FF]/40">
+                    <span className="text-[11px] uppercase font-black tracking-wider px-3 py-1 rounded-full bg-blue-50 text-[#002B49] border border-blue-200">
                       {card.tag}
                     </span>
                   </div>
 
-                  <h3 className="font-display text-xl font-extrabold text-slate-900 mb-3 group-hover:text-[#007BA7] transition-colors">
+                  <h3 className="font-display text-xl font-extrabold text-slate-900 mb-3 group-hover:text-[#002B49] transition-colors">
                     {card.title}
                   </h3>
                   <p className="text-slate-600 text-sm leading-relaxed font-medium">
