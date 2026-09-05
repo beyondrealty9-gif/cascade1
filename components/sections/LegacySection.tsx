@@ -59,10 +59,26 @@ function AnimatedCounter({ end, duration = 2000, suffix = "" }: { end: number; d
 // Starts framed; expands to full screen width/height as user scrolls in.
 function VideoReveal() {
   const ref = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "center center"],
   });
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
 
   const scale        = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
   const borderRadius = useTransform(scrollYProgress, [0, 1], ["24px", "0px"]);
@@ -75,12 +91,12 @@ function VideoReveal() {
         className="relative w-full h-[55vh] sm:h-[75vh] lg:h-[85vh] overflow-hidden bg-black shadow-2xl"
       >
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
-          preload="none"
-          poster="/images/motwani-heritage-banner.png"
+          preload="auto"
           className="w-full h-full object-cover"
         >
           <source src="/videos/riverside-heritage.mp4" type="video/mp4" />
