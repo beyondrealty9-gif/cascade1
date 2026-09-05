@@ -36,10 +36,10 @@ export default function LifestyleExperience() {
   }, []);
 
   const featureIcons = [
-    <Sun className="w-5 h-5 text-[#002B49]" key="0" />,
-    <Wind className="w-5 h-5 text-[#002B49]" key="1" />,
-    <Eye className="w-5 h-5 text-[#002B49]" key="2" />,
-    <Compass className="w-5 h-5 text-[#002B49]" key="3" />,
+    <Sun className="w-5 h-5 text-[#002B49] stroke-[2.5]" key="0" />,
+    <Wind className="w-5 h-5 text-[#002B49] stroke-[2.5]" key="1" />,
+    <Eye className="w-5 h-5 text-[#002B49] stroke-[2.5]" key="2" />,
+    <Compass className="w-5 h-5 text-[#002B49] stroke-[2.5]" key="3" />,
   ];
 
   return (

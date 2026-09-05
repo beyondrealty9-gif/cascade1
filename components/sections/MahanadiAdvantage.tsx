@@ -156,7 +156,7 @@ export default function MahanadiAdvantage() {
                 whileHover={prefersReducedMotion ? {} : { y: -6 }}
                 className="p-6 rounded-2xl bg-white/95 border border-white backdrop-blur-md shadow-xl text-slate-900 transition-transform"
               >
-                <Eye className="w-8 h-8 text-[#7DF9FF] mb-4" />
+                <Eye className="w-8 h-8 text-[#002B49] mb-4" />
                 <h3 className="font-display text-lg font-extrabold text-slate-900 mb-2">Unmatched Horizons</h3>
                 <p className="text-slate-600 text-xs font-medium leading-relaxed">
                   Enjoy endless views of water and sky from your private wide balcony.
