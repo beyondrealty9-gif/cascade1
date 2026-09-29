@@ -32,9 +32,13 @@ type BrochureModalFormData = z.infer<typeof brochureModalSchema>;
 interface EnquiryModalProps {
   isOpen: boolean;
   onClose: () => void;
+  selectedProject?: {
+    name: string;
+    location: string;
+  } | null;
 }
 
-export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
+export default function EnquiryModal({ isOpen, onClose, selectedProject }: EnquiryModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -117,10 +121,16 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
 
             {/* Header Badge */}
             <div className="text-center mb-6">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-black uppercase tracking-wider mb-3 shadow-sm">
-                <Home className="w-4 h-4 text-[#7DF9FF]" />
-                <span>BOOK A FREE SITE VISIT</span>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#18191c] border border-amber-500/30 text-amber-400 text-xs font-black uppercase tracking-wider mb-2 shadow-sm">
+                <Home className="w-4 h-4 text-amber-400" />
+                <span>{selectedProject?.name ? `ENQUIRE: ${selectedProject.name}` : "BOOK A FREE SITE VISIT"}</span>
               </div>
+
+              {selectedProject?.location ? (
+                <p className="text-amber-600 text-xs font-bold uppercase tracking-wide mt-1 mb-1">
+                  📍 {selectedProject.location}
+                </p>
+              ) : null}
 
               <p className="text-slate-600 text-xs sm:text-sm font-semibold max-w-xs mx-auto leading-relaxed">
                 Get instant brochure delivery on Email & WhatsApp, plus latest price & floor plans.

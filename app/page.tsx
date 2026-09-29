@@ -29,6 +29,7 @@ const Footer              = dynamic(() => import("@/components/layout/Footer"));
 export default function Home() {
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
   const [brochureModalOpen, setBrochureModalOpen] = useState(false);
+  const [autoPopupShown, setAutoPopupShown] = useState(false);
 
   useEffect(() => {
     // Force manual scroll restoration to ALWAYS show Hero section first on load
@@ -59,8 +60,20 @@ export default function Home() {
 
     requestAnimationFrame(raf);
 
+    // Auto-popup: show EnquiryModal after 3 seconds, once per session
+    const alreadyShown = sessionStorage.getItem("enquiryPopupShown");
+    let popupTimer: ReturnType<typeof setTimeout> | null = null;
+    if (!alreadyShown) {
+      popupTimer = setTimeout(() => {
+        setEnquiryModalOpen(true);
+        setAutoPopupShown(true);
+        sessionStorage.setItem("enquiryPopupShown", "1");
+      }, 3000);
+    }
+
     return () => {
       lenis.destroy();
+      if (popupTimer) clearTimeout(popupTimer);
     };
   }, []);
 
