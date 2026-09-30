@@ -4,8 +4,6 @@ import { Resend } from "resend";
 import { connectToDatabase } from "@/lib/db";
 import { EnquiryModel } from "@/models/Enquiry";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const enquiryServerSchema = z.object({
   fullName: z.string().min(2, "Full name required"),
   phone: z.string().regex(/^[0-9]{10}$/, "Valid 10-digit phone number required"),
@@ -58,8 +56,10 @@ export async function POST(req: Request) {
     }
 
     // Send email notification via Resend API
-    if (process.env.RESEND_API_KEY) {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (apiKey) {
       try {
+        const resend = new Resend(apiKey);
         const notificationEmail = process.env.NOTIFICATION_EMAIL || "beyondrealty9@gmail.com";
 
         await resend.emails.send({
@@ -104,4 +104,3 @@ export async function POST(req: Request) {
     );
   }
 }
-
