@@ -16,9 +16,26 @@ export default function BrochureModal({ isOpen, onClose }: BrochureModalProps) {
 
   if (!isOpen) return null;
 
-  const handleDownload = (e: React.FormEvent) => {
+  const handleDownload = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !phone) return;
+
+    // Dispatch lead notification to API / Resend / MongoDB
+    try {
+      await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: "Brochure Lead",
+          phone: phone,
+          email: email,
+          unitInterest: "Brochure Request",
+          message: "Requested E-Brochure Download",
+        }),
+      });
+    } catch (err) {
+      console.error("Error submitting brochure lead:", err);
+    }
 
     setDownloaded(true);
     const link = document.createElement("a");
