@@ -56,11 +56,11 @@ export async function POST(req: Request) {
     }
 
     // Send email notification via Resend API
-    const apiKey = process.env.RESEND_API_KEY;
+    const apiKey = process.env.RESEND_API_KEY?.trim();
     if (apiKey) {
       try {
         const resend = new Resend(apiKey);
-        const notificationEmail = process.env.NOTIFICATION_EMAIL || "beyondrealty9@gmail.com";
+        const notificationEmail = (process.env.NOTIFICATION_EMAIL || "beyondrealty9@gmail.com").trim();
 
         await resend.emails.send({
           from: "Cascade Enquiries <onboarding@resend.dev>",
@@ -96,10 +96,10 @@ export async function POST(req: Request) {
       },
       { status: 201 }
     );
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error processing enquiry API route:", error);
     return NextResponse.json(
-      { success: false, error: error?.message || "Internal server error processing enquiry" },
+      { success: false, error: "Internal server error processing enquiry" },
       { status: 500 }
     );
   }
