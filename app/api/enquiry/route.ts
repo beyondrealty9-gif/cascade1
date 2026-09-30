@@ -96,10 +96,10 @@ export async function POST(req: Request) {
       },
       { status: 201 }
     );
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error processing enquiry API route:", error);
     return NextResponse.json(
-      { success: false, error: "Internal server error processing enquiry" },
+      { success: false, error: error?.message || "Internal server error processing enquiry" },
       { status: 500 }
     );
   }
