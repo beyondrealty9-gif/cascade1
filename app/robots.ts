@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://codenamecascade.com/sitemap.xml",
+    sitemap: "https://www.cascade.ind.in/sitemap.xml",
   };
 }

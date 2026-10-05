@@ -15,6 +15,32 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'cascade1-ebon.vercel.app',
+          },
+        ],
+        destination: 'https://www.cascade.ind.in/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'cascade.ind.in',
+          },
+        ],
+        destination: 'https://www.cascade.ind.in/:path*',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

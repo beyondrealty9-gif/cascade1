@@ -8,7 +8,10 @@ export function generateProjectMetadata(): Metadata {
   const description = `${subtitle}. ${tagline} Premium homes starting at ${priceStarting} in Trisulia, Cuttack. Direct river views, 60% open green space, and luxury amenities.`;
 
   return {
-    metadataBase: new URL("https://codenamecascade.com"),
+    metadataBase: new URL("https://www.cascade.ind.in"),
+    alternates: {
+      canonical: "https://www.cascade.ind.in",
+    },
     title,
     description,
     keywords: [
@@ -22,6 +25,8 @@ export function generateProjectMetadata(): Metadata {
       "Mahanadi view homes",
       "Real estate Cuttack Bhubaneswar",
       "Flats in Cuttack starting 69 lakhs",
+      "cascade.ind.in",
+      "www.cascade.ind.in",
     ],
     icons: {
       icon: "/favicon.png",
@@ -31,7 +36,7 @@ export function generateProjectMetadata(): Metadata {
     openGraph: {
       title,
       description,
-      url: "https://codenamecascade.com",
+      url: "https://www.cascade.ind.in",
       siteName: name,
       images: [
         {
@@ -72,10 +77,10 @@ export function generateRealEstateSchema() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://codenamecascade.com/#organization",
+        "@id": "https://www.cascade.ind.in/#organization",
         "name": developer,
         "url": "https://motwaniconstructions.com",
-        "logo": "https://codenamecascade.com/images/logo.png",
+        "logo": "https://www.cascade.ind.in/images/logo.png",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": cascadeContent.project.phone,
@@ -86,11 +91,11 @@ export function generateRealEstateSchema() {
       },
       {
         "@type": "RealEstateListing",
-        "@id": "https://codenamecascade.com/#listing",
+        "@id": "https://www.cascade.ind.in/#listing",
         "name": name,
         "description": cascadeContent.project.subtitle,
-        "url": "https://codenamecascade.com",
-        "image": "https://codenamecascade.com/images/road-elevation-dusk.webp",
+        "url": "https://www.cascade.ind.in",
+        "image": "https://www.cascade.ind.in/images/road-elevation-dusk.webp",
         "offers": {
           "@type": "AggregateOffer",
           "priceCurrency": "INR",
@@ -102,7 +107,7 @@ export function generateRealEstateSchema() {
       },
       {
         "@type": "SingleFamilyResidence",
-        "@id": "https://codenamecascade.com/#residence",
+        "@id": "https://www.cascade.ind.in/#residence",
         "name": `${name} Luxury Riverside Residences`,
         "address": {
           "@type": "PostalAddress",
