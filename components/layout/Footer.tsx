@@ -49,7 +49,7 @@ export default function Footer() {
             <div className="space-y-2 text-xs text-slate-300">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#7DF9FF] shrink-0 mt-0.5" />
-                <span>{cascadeContent.project.address}</span>
+                <span>{cascadeContent.project.officeAddress || cascadeContent.project.address}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#7DF9FF] shrink-0" />

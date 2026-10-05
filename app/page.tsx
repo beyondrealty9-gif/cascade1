@@ -60,7 +60,7 @@ export default function Home() {
 
     requestAnimationFrame(raf);
 
-    // Auto-popup: show EnquiryModal after 3 seconds, once per session
+    // Auto-popup: show EnquiryModal after 45 seconds, once per session
     const alreadyShown = sessionStorage.getItem("enquiryPopupShown");
     let popupTimer: ReturnType<typeof setTimeout> | null = null;
     if (!alreadyShown) {
@@ -68,7 +68,7 @@ export default function Home() {
         setEnquiryModalOpen(true);
         setAutoPopupShown(true);
         sessionStorage.setItem("enquiryPopupShown", "1");
-      }, 3000);
+      }, 45000);
     }
 
     return () => {

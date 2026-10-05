@@ -170,9 +170,9 @@ export default function CTAContact() {
                   <MapPin className="w-5 h-5 text-[#7DF9FF] group-hover:text-slate-950" />
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-wider font-extrabold text-slate-400">Site Experience Center</div>
+                  <div className="text-xs uppercase tracking-wider font-extrabold text-slate-400">Sales & Marketing Office</div>
                   <p className="text-sm font-bold text-slate-800 leading-snug">
-                    {cascadeContent.project.address}
+                    {cascadeContent.project.officeAddress || cascadeContent.project.address}
                   </p>
                 </div>
               </motion.div>
